@@ -25,7 +25,7 @@ namespace Stud.Verwaltung
 
             using (var session = sessionFactory.OpenSession())
             {
-
+                WaitWithMessage("CREATE", "Entitäten werden erstellt");
                 #region Entitäten erstellen
                 using (var transaction = session.BeginTransaction())
                 {
@@ -70,7 +70,8 @@ namespace Stud.Verwaltung
 
                 printDataContent(session);
 
-                #region Entitäten berarbeiten
+                WaitWithMessage("UPDATE", "Entitäten werden bearbeitet", "(Hans => GesamtNote, Lisa => Name, Musik => Neues Buch)");
+                #region Entitäten bearbeiten
                 using (var transaction = session.BeginTransaction())
                 {
                     var hans = session.CreateCriteria(typeof(Student))
@@ -99,6 +100,45 @@ namespace Stud.Verwaltung
 
                 }
                 #endregion
+
+                printDataContent(session);
+
+                WaitWithMessage("DELETE", "Entitäten werden gelöscht", "(Kurt => Chemie)");
+                #region Entitäten löschen
+
+                using (var transaction = session.BeginTransaction())
+                {
+                    var kurt = session.CreateCriteria(typeof(Student))
+                        .Add(Restrictions.Eq("Name", "Kurt"))
+                        .UniqueResult<Student>();
+
+                    kurt.KursListe.Remove(session
+                        .CreateCriteria(typeof(Kurs))
+                        .Add(Restrictions.Eq("Title", "Chemie"))
+                        .UniqueResult<Kurs>());
+                    
+                    session.SaveOrUpdate(kurt);
+
+                    transaction.Commit();
+                }
+
+                printKurse(session);
+
+                WaitWithMessage("DELETE", "Entitäten werden gelöscht", "(Chemie => Komplett)");
+                using (var transaction = session.BeginTransaction())
+                {
+                    var chem = session.CreateCriteria(typeof(Kurs))
+                        .Add(Restrictions.Eq("Title", "Chemie"))
+                        .UniqueResult<Kurs>();
+
+                    session.Delete(chem);
+
+                    transaction.Commit();
+                }
+                
+                #endregion
+
+                printKurse(session);
 
                 printDataContent(session);
 
@@ -132,6 +172,20 @@ namespace Stud.Verwaltung
             }
         }
 
+        private static void printKurse(ISession session)
+        {
+            Console.WriteLine("Alle existierende Kurse: ");
+            var kurse = session.CreateCriteria(typeof(Kurs)).List<Kurs>();
+            Console.WriteLine(String.Join(", ", kurse.Select(x => x.Title)) + "\n");
+        }
+
+        private static void WaitWithMessage(params string[] message)
+        {
+            Console.WriteLine("_________________________________________________________");
+            Console.WriteLine(String.Join("\n", message));
+            Console.WriteLine("Press any Key to continue....");
+            Console.ReadKey();
+        }
 
         private static void AddBuchToKurs(Kurs k, params Buch[] b)
         {

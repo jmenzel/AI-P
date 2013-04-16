@@ -13,3 +13,4 @@ E:\Projekte\Studium\AI-P\Stud.Verwaltung\bin\Debug\Iesi.Collections.xml
 E:\Projekte\Studium\AI-P\Stud.Verwaltung\bin\Debug\NHibernate.xml
 E:\Projekte\Studium\AI-P\Stud.Verwaltung\obj\Debug\Stud.Verwaltung.exe
 E:\Projekte\Studium\AI-P\Stud.Verwaltung\obj\Debug\Stud.Verwaltung.pdb
+E:\Projekte\Studium\AI-P\Stud.Verwaltung\obj\Debug\Stud.Verwaltung.csprojResolveAssemblyReference.cache
