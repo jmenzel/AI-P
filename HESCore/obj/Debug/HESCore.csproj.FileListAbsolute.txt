@@ -1,0 +1,7 @@
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\HESCore.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\HESCore.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Kunde.pdb
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.dll
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.pdb

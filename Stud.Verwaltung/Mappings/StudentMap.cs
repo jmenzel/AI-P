@@ -15,8 +15,8 @@ namespace Stud.Verwaltung.Mappings
         {
             Id(x => x.ID);
             Map(x => x.Name);
-            HasMany(x => x.KursListe).Cascade.All();
-            HasOne(x => x.NKonto).Cascade.All();
+            HasMany(x => x.KursListe).Cascade.SaveUpdate();
+            HasOne(x => x.NKonto).Cascade.SaveUpdate();
         }
     }
 }

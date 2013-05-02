@@ -1,0 +1,4 @@
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.pdb
+E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.pdb
