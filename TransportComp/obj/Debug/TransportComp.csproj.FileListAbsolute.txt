@@ -1,0 +1,5 @@
+Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.dll
+Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.pdb
+Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.csprojResolveAssemblyReference.cache
+Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.dll
+Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.pdb

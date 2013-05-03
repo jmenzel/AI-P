@@ -1,0 +1,7 @@
+Y:\Documents\Git\AI-P\AuftragserfassungComp\bin\Debug\AuftragserfassungComp.dll
+Y:\Documents\Git\AI-P\AuftragserfassungComp\bin\Debug\AuftragserfassungComp.pdb
+Y:\Documents\Git\AI-P\AuftragserfassungComp\bin\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\AuftragserfassungComp\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.csprojResolveAssemblyReference.cache
+Y:\Documents\Git\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.dll
+Y:\Documents\Git\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.pdb

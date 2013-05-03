@@ -2,3 +2,7 @@ E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.dll
 E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.pdb
 E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.dll
 E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\Kunde.pdb

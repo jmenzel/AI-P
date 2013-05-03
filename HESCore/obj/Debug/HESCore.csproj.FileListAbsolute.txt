@@ -5,3 +5,10 @@ E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Kunde.pdb
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.dll
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.pdb
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\HESCore.dll
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\HESCore.pdb
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HESCore.dll
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HESCore.pdb

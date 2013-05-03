@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KundeComp", "Kunde\KundeCom
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HESCore", "HESCore\HESCore.csproj", "{442F74BC-A156-4120-A9BB-2D9CB26BA44C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TransportComp", "TransportComp\TransportComp.csproj", "{C857F12C-A57F-4AAA-9739-04C62544F635}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuftragserfassungComp", "AuftragserfassungComp\AuftragserfassungComp.csproj", "{FD178803-D4DC-4400-962F-B140F5E796C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,14 @@ Global
 		{442F74BC-A156-4120-A9BB-2D9CB26BA44C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{442F74BC-A156-4120-A9BB-2D9CB26BA44C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{442F74BC-A156-4120-A9BB-2D9CB26BA44C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C857F12C-A57F-4AAA-9739-04C62544F635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C857F12C-A57F-4AAA-9739-04C62544F635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C857F12C-A57F-4AAA-9739-04C62544F635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C857F12C-A57F-4AAA-9739-04C62544F635}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD178803-D4DC-4400-962F-B140F5E796C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD178803-D4DC-4400-962F-B140F5E796C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD178803-D4DC-4400-962F-B140F5E796C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD178803-D4DC-4400-962F-B140F5E796C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
