@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HES.AuftragserfassungComp.Repository.Entity
+namespace HES.AuftragserfassungComp.Logic
 {
-     class AuftragTyp
+    class AngebotTyp : IAuftragserfassung
     {
     }
 }

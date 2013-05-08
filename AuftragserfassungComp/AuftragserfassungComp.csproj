@@ -40,6 +40,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAuftragserfassung.cs" />
+    <Compile Include="Logic\AngebotTyp.cs" />
+    <Compile Include="Logic\AuftragTyp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\Entity\AngebotNummerTyp.cs" />
     <Compile Include="Repository\Entity\AngebotTyp.cs" />
@@ -47,9 +49,7 @@
     <Compile Include="Repository\Entity\AuftragStatusTyp.cs" />
     <Compile Include="Repository\Entity\AuftragTyp.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Kunde\KundeComp.csproj">
       <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>

@@ -13,7 +13,7 @@ namespace HES.AuftragserfassungComp
     /// </summary>
     interface IAuftragserfassung
     {
-        AngebotNummerTyp erstelleAngebot(AngebotTyp angebot, KundeTyp kunde);
+        AngebotNummerTyp erstelleAngebot(AngebotTyp angebot, KundenNrTyp kunde);
         AngebotTyp holeAngebot(AngebotNummerTyp nr);
         AuftragNummerTyp erstelleAuftrag(AngebotNummerTyp nr);
         void markiereAuftrag(AuftragNummerTyp auftrag, AuftragStatusTyp status);

@@ -18,17 +18,17 @@ namespace HES.Kunde.Repository
         }
 
 
-        public KundenNrTyp createKunden()
+        public KundenNrTyp createKunden(string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
         {
             throw new NotImplementedException();
         }
 
-        public bool deleteKunde()
+        public bool deleteKunde(KundenNrTyp nr)
         {
             throw new NotImplementedException();
         }
 
-        public bool updateKunde()
+        public bool updateKunde(KundenNrTyp nr, string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
         {
             throw new NotImplementedException();
         }
