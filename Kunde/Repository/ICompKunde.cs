@@ -10,9 +10,9 @@ namespace HES.Kunde.Repository
     interface ICompKunde
     {
         KundeTyp getKundeByKundenNr(KundenNrTyp nr);
-        KundenNrTyp createKunden(); // TODO: Felder hinzufügen
-        bool deleteKunde();
-        bool updateKunde(); // TODO: Felder hinzufügen
+        KundenNrTyp createKunden(string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land);
+        bool deleteKunde(KundenNrTyp nr);
+        bool updateKunde(KundenNrTyp nr, string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land); 
         IList<KundeTyp> getKundenByName(string name);
     }
 }

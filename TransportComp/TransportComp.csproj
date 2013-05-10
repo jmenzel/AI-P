@@ -39,15 +39,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Lieferauftrag.cs" />
+    <Compile Include="Logic\Transportauftrag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITransport.cs" />
     <Compile Include="Repository\Entity\LieferdetailsTyp.cs" />
     <Compile Include="Repository\Entity\LiefernummerTyp.cs" />
     <Compile Include="Repository\Entity\TransportauftragTyp.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

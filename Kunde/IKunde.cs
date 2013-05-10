@@ -10,5 +10,6 @@ namespace HES.Kunde
     public interface IKunde
     {
         KundeTyp getKundeByKundenNr(KundenNrTyp nr);
+        
     }
 }
