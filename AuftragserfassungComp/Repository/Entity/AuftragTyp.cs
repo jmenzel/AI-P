@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
-    class AuftragTyp
+    public class AuftragTyp
     {
     }
 }

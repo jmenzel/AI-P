@@ -43,9 +43,29 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuftragserfassungComp\AuftragserfassungComp.csproj">
+      <Project>{fd178803-d4dc-4400-962f-b140f5e796c7}</Project>
+      <Name>AuftragserfassungComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EinkaufComp\EinkaufComp.csproj">
+      <Project>{48cd264d-79fb-48e1-9f39-554177e811ce}</Project>
+      <Name>EinkaufComp</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kunde\KundeComp.csproj">
       <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>
       <Name>KundeComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LagerComp\LagerComp.csproj">
+      <Project>{7b019172-ddf9-45e6-9a72-1181772da7ef}</Project>
+      <Name>LagerComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RechnungComp\RechnungComp.csproj">
+      <Project>{69390045-dde8-49d8-aaea-c06243d5eec0}</Project>
+      <Name>RechnungComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TransportComp\TransportComp.csproj">
+      <Project>{c857f12c-a57f-4aaa-9739-04c62544f635}</Project>
+      <Name>TransportComp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
