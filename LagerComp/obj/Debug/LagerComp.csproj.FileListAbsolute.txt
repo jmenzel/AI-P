@@ -17,6 +17,5 @@ Y:\Documents\Git\AI-P\LagerComp\bin\Debug\NHibernate.dll
 Y:\Documents\Git\AI-P\LagerComp\bin\Debug\FluentNHibernate.xml
 Y:\Documents\Git\AI-P\LagerComp\bin\Debug\Iesi.Collections.xml
 Y:\Documents\Git\AI-P\LagerComp\bin\Debug\NHibernate.xml
-Y:\Documents\Git\AI-P\LagerComp\obj\Debug\LagerComp.csprojResolveAssemblyReference.cache
 Y:\Documents\Git\AI-P\LagerComp\obj\Debug\LagerComp.dll
 Y:\Documents\Git\AI-P\LagerComp\obj\Debug\LagerComp.pdb

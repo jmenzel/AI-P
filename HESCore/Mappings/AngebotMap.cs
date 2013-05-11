@@ -8,11 +8,28 @@ using System.Threading.Tasks;
 
 namespace HES.Mappings
 {
+    class PreisMap : ClassMap<PreisTyp>
+    {
+        public PreisMap()
+        {
+            Id(x => x.preis);
+        }
+    }
+
+    class AngebotNummerMap : ClassMap<AngebotNummerTyp>
+    {
+        public AngebotNummerMap()
+        {
+            Id(x => x.nr);
+        }
+    }
+
     class AngebotMap : ClassMap<AngebotTyp>
     {
         public AngebotMap()
         {
-            Id(x => x.nr);
+            Id(x => x.ID);
+            References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.gueltigAb);
             Map(x => x.gueltigBis);
             Map(x => x.preis);

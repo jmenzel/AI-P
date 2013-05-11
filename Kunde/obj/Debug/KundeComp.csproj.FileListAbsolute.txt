@@ -1,0 +1,11 @@
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\FluentNHibernate.dll
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Iesi.Collections.dll
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\NHibernate.dll
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\FluentNHibernate.xml
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\Iesi.Collections.xml
+Y:\Documents\Git\AI-P\Kunde\bin\Debug\NHibernate.xml
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\KundeComp.csprojResolveAssemblyReference.cache
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\Kunde.pdb

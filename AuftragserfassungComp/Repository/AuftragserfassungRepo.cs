@@ -3,22 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HES.AuftragserfassungComp.Repository.Entity;
+using HES.Kunde.Repository.Entity;
 
 namespace HES.AuftragserfassungComp.Repository
 {
     class AuftragserfassungRepo : IAuftragserfassung
     {
-        public Entity.AngebotNummerTyp erstelleAngebot(Entity.AngebotTyp angebot, Kunde.Repository.Entity.KundenNrTyp kunde)
+        public AngebotNummerTyp erstelleAngebot(Entity.AngebotTyp angebot, KundenNrTyp kunde)
         {
             throw new NotImplementedException();
         }
 
-        public Entity.AngebotTyp holeAngebot(Entity.AngebotNummerTyp nr)
+        public AngebotTyp holeAngebot(AngebotNummerTyp nr)
         {
             throw new NotImplementedException();
         }
 
-        public Entity.AuftragNummerTyp erstelleAuftrag(Entity.AngebotNummerTyp nr)
+        public AuftragNummerTyp erstelleAuftrag(AngebotNummerTyp nr)
         {
             throw new NotImplementedException();
         }

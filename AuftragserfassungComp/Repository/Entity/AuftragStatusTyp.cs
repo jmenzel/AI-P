@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
-    enum AuftragStatusTyp
+    /// <summary>
+    /// Wird erstmal nicth benutzt
+    /// </summary>
+    public enum AuftragStatusTyp
     {
+
     }
 }

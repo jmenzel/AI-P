@@ -1,8 +1,3 @@
-Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.dll
-Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.pdb
-Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.csprojResolveAssemblyReference.cache
-Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.dll
-Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.pdb
 E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\TransportComp.dll
 E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\TransportComp.pdb
 E:\Projekte\Studium\AI-P\TransportComp\obj\Debug\TransportComp.dll
@@ -13,9 +8,13 @@ E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\NHibernate.dll
 E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\FluentNHibernate.xml
 E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\Iesi.Collections.xml
 E:\Projekte\Studium\AI-P\TransportComp\bin\Debug\NHibernate.xml
+Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.dll
+Y:\Documents\Git\AI-P\TransportComp\bin\Debug\TransportComp.pdb
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\FluentNHibernate.dll
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\Iesi.Collections.dll
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\NHibernate.dll
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\FluentNHibernate.xml
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\Iesi.Collections.xml
 Y:\Documents\Git\AI-P\TransportComp\bin\Debug\NHibernate.xml
+Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.dll
+Y:\Documents\Git\AI-P\TransportComp\obj\Debug\TransportComp.pdb
