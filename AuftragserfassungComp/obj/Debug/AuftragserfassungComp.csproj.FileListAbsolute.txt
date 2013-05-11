@@ -12,9 +12,3 @@ E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\Kunde.pdb
 E:\Projekte\Studium\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.csprojResolveAssemblyReference.cache
 E:\Projekte\Studium\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.dll
 E:\Projekte\Studium\AI-P\AuftragserfassungComp\obj\Debug\AuftragserfassungComp.pdb
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\FluentNHibernate.dll
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\Iesi.Collections.dll
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\NHibernate.dll
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\FluentNHibernate.xml
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\Iesi.Collections.xml
-E:\Projekte\Studium\AI-P\AuftragserfassungComp\bin\Debug\NHibernate.xml
