@@ -55,7 +55,6 @@
     <Compile Include="Repository\Entity\Kunde.cs" />
     <Compile Include="Repository\Entity\KundenNrTyp.cs" />
     <Compile Include="Repository\Entity\KundeTyp.cs" />
-    <Compile Include="Repository\ICompKunde.cs" />
     <Compile Include="Repository\KundenRepo.cs" />
   </ItemGroup>
   <ItemGroup>

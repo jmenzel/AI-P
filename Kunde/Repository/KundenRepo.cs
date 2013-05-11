@@ -7,14 +7,12 @@ using System.Threading.Tasks;
 
 namespace HES.Kunde.Repository
 {
-    class KundenRepo : ICompKunde
+    class KundenRepo
     {
 
         public KundeTyp getKundeByKundenNr(KundenNrTyp nr)
         {
-            Entity.Kunde _tmp = null;
-
-            return _tmp.asKundeTyp();
+            throw new NotImplementedException();
         }
 
 

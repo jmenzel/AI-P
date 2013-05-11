@@ -10,11 +10,32 @@ namespace HES.Kunde.Logic
 {
     class Kunde : IKunde
     {
-        ICompKunde repo = new KundenRepo();
+        KundenRepo repo = new KundenRepo();
 
         public KundeTyp getKundeByKundenNr(KundenNrTyp nr)
         {
             return repo.getKundeByKundenNr(nr);
+        }
+
+
+        public KundenNrTyp createKunden(string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
+        {
+            return repo.createKunden(nachname, vorname, geburtsdatum, level, strase, plz, ort, land);
+        }
+
+        public bool deleteKunde(KundenNrTyp nr)
+        {
+            return repo.deleteKunde(nr);
+        }
+
+        public bool updateKunde(KundenNrTyp nr, string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
+        {
+            return repo.updateKunde(nr, nachname, vorname, geburtsdatum, level, strase, plz, ort, land);
+        }
+
+        public IList<KundeTyp> getKundenByName(string name)
+        {
+            return repo.getKundenByName(name);
         }
     }
 }

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
-    public class AuftragNummerTyp
+    public class PreisTyp
     {
-        public String nr { get; protected set; }
+        public Decimal preis { get; private set; }
     }
 }

@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HES.AuftragserfassungComp.Repository.Entity
+namespace HES.Kunde.Repository.Entity
 {
-    public class AuftragNummerTyp
+    public enum KundenLevel
     {
-        public String nr { get; protected set; }
+        Potentiell,
+        Regulaer,
+        HighOrder
     }
 }
