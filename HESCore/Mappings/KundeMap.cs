@@ -22,7 +22,7 @@ namespace HES.Mappings
         public KundeMap()
         {
             Id(x => x.ID);
-            HasOne(x => x.kundenNr).Cascade.All();
+            References(x => x.kundenNr).Cascade.All().Not.LazyLoad();
             Map(x => x.level);
             Map(x => x.vorname);
             Map(x => x.name);

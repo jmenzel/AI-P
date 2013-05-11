@@ -13,7 +13,6 @@ namespace HES.Core.Mappigns
         public ProduktMap()
         {
             Id(x => x.ID);
-            //HasOne(x => x.prodNr).Cascade.All();
             References(x => x.prodNr).Cascade.All().Not.LazyLoad();
             Map(x => x.name);
         }
