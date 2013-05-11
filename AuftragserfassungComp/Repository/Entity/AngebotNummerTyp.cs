@@ -8,7 +8,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 {
     public class AngebotNummerTyp
     {
-        public String nr { get; protected set; }
+        public virtual String nr { get; protected set; }
 
         public AngebotNummerTyp(String nr)
         {

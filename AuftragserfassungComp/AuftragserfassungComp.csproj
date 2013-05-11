@@ -49,7 +49,6 @@
     <Compile Include="Repository\Entity\AuftragNummerTyp.cs" />
     <Compile Include="Repository\Entity\AuftragStatusTyp.cs" />
     <Compile Include="Repository\Entity\AuftragTyp.cs" />
-    <Compile Include="Repository\Entity\PreisTyp.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

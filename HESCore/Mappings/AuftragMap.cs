@@ -25,7 +25,7 @@ namespace HES.Mappings
             References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
-            Map(x => x.gehoertZuAngebot);
+            HasOne(x => x.gehoertZuAngebot).Constrained().ForeignKey();
         }
     }
 

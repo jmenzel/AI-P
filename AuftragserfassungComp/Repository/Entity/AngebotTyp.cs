@@ -12,9 +12,9 @@ namespace HES.AuftragserfassungComp.Repository.Entity
          public virtual AngebotNummerTyp nr { get; protected set; }
          public virtual DateTime gueltigAb { get; protected set; }
          public virtual DateTime gueltigBis { get; protected set; }
-         public virtual PreisTyp preis { get; protected set; }
+         public virtual double preis { get; protected set; }
 
-         public AngebotTyp(AngebotNummerTyp nr, DateTime gueltigAb, DateTime gueltigBis, PreisTyp preis)
+         public AngebotTyp(AngebotNummerTyp nr, DateTime gueltigAb, DateTime gueltigBis, double preis)
          {
              this.nr = nr;
              this.gueltigAb = gueltigAb;

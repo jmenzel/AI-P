@@ -8,13 +8,6 @@ using System.Threading.Tasks;
 
 namespace HES.Mappings
 {
-    class PreisMap : ClassMap<PreisTyp>
-    {
-        public PreisMap()
-        {
-            Id(x => x.preis);
-        }
-    }
 
     class AngebotNummerMap : ClassMap<AngebotNummerTyp>
     {
