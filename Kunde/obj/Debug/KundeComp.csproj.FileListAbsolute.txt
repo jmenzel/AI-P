@@ -12,4 +12,3 @@ E:\Projekte\Studium\AI-P\Kunde\bin\Debug\NHibernate.dll
 E:\Projekte\Studium\AI-P\Kunde\bin\Debug\FluentNHibernate.xml
 E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Iesi.Collections.xml
 E:\Projekte\Studium\AI-P\Kunde\bin\Debug\NHibernate.xml
-E:\Projekte\Studium\AI-P\Kunde\obj\Debug\KundeComp.csprojResolveAssemblyReference.cache
