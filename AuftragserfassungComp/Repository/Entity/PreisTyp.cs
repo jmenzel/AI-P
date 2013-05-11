@@ -8,6 +8,14 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 {
     public class PreisTyp
     {
-        public Decimal preis { get; private set; }
+        public virtual double preis { get; protected set; }
+
+        public PreisTyp(double preis)
+        {
+            this.preis = preis;
+        }
+
+        protected PreisTyp() { }
     }
+
 }

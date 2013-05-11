@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace HES.Mappings
 {
+    
     public class AuftragsNummerMap : ClassMap<AuftragNummerTyp>
     {
         public AuftragsNummerMap()
@@ -20,7 +21,8 @@ namespace HES.Mappings
     {
         public AuftragMap()
         {
-            Id(x => x.nr);
+            Id(x => x.ID);
+            References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
             Map(x => x.gehoertZuAngebot);

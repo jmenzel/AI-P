@@ -10,9 +10,17 @@ namespace HES.AuftragserfassungComp.Repository.Entity
     {
         public String nr { get; protected set; }
 
-        public AngebotNummerTyp()
+        public AngebotNummerTyp(String nr)
         {
+            this.nr = checkAngebotNummer(nr);
+        }
 
+        protected AngebotNummerTyp() { }
+
+        //TODO: Nummer prüfen!
+        private String checkAngebotNummer(String nr)
+        {
+            return "";
         }
     }
 }
