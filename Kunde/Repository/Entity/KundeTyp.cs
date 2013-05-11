@@ -17,7 +17,7 @@ namespace HES.Kunde.Repository.Entity
         public virtual string hausnr { get; protected set; }
         public virtual string strasse { get; protected set; }
         public virtual string ort { get; protected set; }
-        public virtual int plz { get; protected set; }
+        public virtual string plz { get; protected set; }
         public virtual string land { get; protected set; }
     
     

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
 E:\Projekte\Studium\AI-P\HESCore\bin\Debug\x64\SQLite.Interop.dll
 E:\Projekte\Studium\AI-P\HESCore\bin\Debug\x86\SQLite.Interop.dll
@@ -25,6 +26,13 @@ E:\Projekte\Studium\AI-P\HESCore\bin\Debug\NHibernate.xml
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HES.pdb
 E:\Projekte\Studium\AI-P\HESCore\bin\Debug\HES.exe
 E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HES.exe
+=======
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\Kunde.dll
+Y:\Documents\Git\AI-P\HESCore\bin\Debug\Kunde.pdb
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HES.exe
+Y:\Documents\Git\AI-P\HESCore\obj\Debug\HES.pdb
+>>>>>>> b801d77e41a0bbac3207550717bce28b6197981d
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\x64\SQLite.Interop.dll
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\x86\SQLite.Interop.dll
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\HES.exe
@@ -49,6 +57,36 @@ Y:\Documents\Git\AI-P\HESCore\bin\Debug\TransportComp.pdb
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\FluentNHibernate.xml
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\Iesi.Collections.xml
 Y:\Documents\Git\AI-P\HESCore\bin\Debug\NHibernate.xml
+<<<<<<< HEAD
 Y:\Documents\Git\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
 Y:\Documents\Git\AI-P\HESCore\obj\Debug\HES.exe
 Y:\Documents\Git\AI-P\HESCore\obj\Debug\HES.pdb
+=======
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\x64\SQLite.Interop.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\x86\SQLite.Interop.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\HES.exe
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\HES.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\AuftragserfassungComp.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\EinkaufComp.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\FluentNHibernate.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Iesi.Collections.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\LagerComp.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\NHibernate.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\RechnungComp.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\System.Data.SQLite.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\TransportComp.dll
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\AuftragserfassungComp.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\EinkaufComp.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Kunde.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\LagerComp.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\RechnungComp.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\TransportComp.pdb
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\FluentNHibernate.xml
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\Iesi.Collections.xml
+E:\Projekte\Studium\AI-P\HESCore\bin\Debug\NHibernate.xml
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HESCore.csprojResolveAssemblyReference.cache
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HES.exe
+E:\Projekte\Studium\AI-P\HESCore\obj\Debug\HES.pdb
+>>>>>>> b801d77e41a0bbac3207550717bce28b6197981d
