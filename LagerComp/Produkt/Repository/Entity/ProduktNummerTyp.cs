@@ -4,9 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LagerComp.Produkt.Repository.Entity
+namespace HES.Lager.Produkt.Repository.Entity
 {
     public class ProduktNummerTyp
     {
+        public string prodNr { get; private set; }
+
+        public ProduktNummerTyp(string nr)
+        {
+            this.prodNr = nr;
+        }
     }
 }

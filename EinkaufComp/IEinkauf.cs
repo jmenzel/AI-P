@@ -1,5 +1,5 @@
 ﻿using EinkaufComp.Lieferant.Repository.Entity;
-using LagerComp.Produkt.Repository.Entity;
+using HES.Lager.Produkt.Repository.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

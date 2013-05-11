@@ -1,0 +1,15 @@
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\RechnungComp.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\RechnungComp.pdb
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\AuftragserfassungComp.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\AuftragserfassungComp.pdb
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\Kunde.pdb
+E:\Projekte\Studium\AI-P\RechnungComp\obj\Debug\RechnungComp.csprojResolveAssemblyReference.cache
+E:\Projekte\Studium\AI-P\RechnungComp\obj\Debug\RechnungComp.dll
+E:\Projekte\Studium\AI-P\RechnungComp\obj\Debug\RechnungComp.pdb
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\FluentNHibernate.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\Iesi.Collections.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\NHibernate.dll
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\FluentNHibernate.xml
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\Iesi.Collections.xml
+E:\Projekte\Studium\AI-P\RechnungComp\bin\Debug\NHibernate.xml

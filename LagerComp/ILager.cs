@@ -1,18 +1,19 @@
-﻿using LagerComp.Produkt.Repository.Entity;
-using LagerComp.Repository.Entity;
+﻿using HES.Lager.Produkt.Repository.Entity;
+using HES.Lager.Repository.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LagerComp
+namespace HES.Lager
 {
     public interface ILager
     {
-        MeldungsNummerTyp erstelleWarenausgang(ProduktNummerTyp prod, int Anzahl);
-        MeldungsNummerTyp erstelleWareneingang(ProduktNummerTyp prod, int Anzahl);
-        bool pruefeLagerbestand(ProduktNummerTyp prod, int Anzahl);
-        ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
+        string erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl);
+        string erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein);
+        bool pruefeLagerbestand(ProduktDetailsTyp prod, int Anzahl);
+        string erstelleProdukt(ProduktDetailsTyp prod);
+        ProduktDetailsTyp[] getProdukte();
     }
 }

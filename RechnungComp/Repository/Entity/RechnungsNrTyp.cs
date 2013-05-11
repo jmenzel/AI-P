@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RechnungComp.Repository.Entity
 {
-    class RechnungsNrTyp
+    public class RechnungsNrTyp
     {
     }
 }

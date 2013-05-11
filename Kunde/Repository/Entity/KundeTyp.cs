@@ -8,16 +8,16 @@ namespace HES.Kunde.Repository.Entity
 {
     public class KundeTyp
     {
-        public KundenNrTyp kundenNr { get; private set; }
-        public KundenLevel level { get; private set; }
-        public string vorname { get; private set; }
-        public string name { get; private set; }
-        public DateTime geburtstag { get; private set; }
-        public string hausnr { get; private set; }
-        public string strasse { get; private set; }
-        public string ort { get; private set; }
-        public int plz { get; private set; }
-        public string land { get; private set; }
+        public virtual KundenNrTyp kundenNr { get; protected set; }
+        public virtual KundenLevel level { get; protected set; }
+        public virtual string vorname { get; protected set; }
+        public virtual string name { get; protected set; }
+        public virtual DateTime geburtstag { get; protected set; }
+        public virtual string hausnr { get; protected set; }
+        public virtual string strasse { get; protected set; }
+        public virtual string ort { get; protected set; }
+        public virtual int plz { get; protected set; }
+        public virtual string land { get; protected set; }
 
     }
 }
