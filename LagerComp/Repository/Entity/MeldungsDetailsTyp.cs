@@ -9,7 +9,8 @@ namespace HES.Lager.Repository.Entity
 {
     public class MeldungsDetailsTyp
     {
-        public virtual string mNr { get; protected set; }
+        public virtual int ID { get; protected set; }
+        public virtual MeldungsNummerTyp mNr { get; protected set; }
         public virtual ProduktDetailsTyp prod { get; protected set; }
         public virtual DateTime date { get; protected set; }
         public virtual int menge { get; protected set; }

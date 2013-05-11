@@ -12,8 +12,18 @@ namespace HES.Core.Mappigns
     {
         public ProduktMap()
         {
-            Id(x => x.prodNr);
+            Id(x => x.ID);
+            //HasOne(x => x.prodNr).Cascade.All();
+            References(x => x.prodNr).Cascade.All().Not.LazyLoad();
             Map(x => x.name);
+        }
+    }
+
+    public class ProduktNummerMap : ClassMap<ProduktNummerTyp>
+    {
+        public ProduktNummerMap()
+        {
+            Id(x => x.prodNr);
         }
     }
 }

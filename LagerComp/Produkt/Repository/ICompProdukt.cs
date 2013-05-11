@@ -9,7 +9,7 @@ namespace HES.Lager.Produkt.Repository
 {
     interface ICompProdukt
     {
-        string erstelleProdukt(ProduktDetailsTyp prod);
+        ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
         ProduktDetailsTyp[] getProdukte();
     }
 }

@@ -21,7 +21,8 @@ namespace HES.Mappings
     {
         public KundeMap()
         {
-            Id(x => x.kundenNr);
+            Id(x => x.ID);
+            HasOne(x => x.kundenNr).Cascade.All();
             Map(x => x.level);
             Map(x => x.vorname);
             Map(x => x.name);

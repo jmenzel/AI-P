@@ -8,7 +8,7 @@ namespace HES.Kunde.Repository.Entity
 {
     public class KundenNrTyp
     {
-        public string value { get; private set;}
+        public virtual string value { get; protected set;}
 
         /// <summary>
         /// Repräsentiert eine Kundennr
@@ -18,6 +18,11 @@ namespace HES.Kunde.Repository.Entity
         public KundenNrTyp(string nr)
         {
             this.value = nr;
+        }
+
+        protected KundenNrTyp()
+        {
+            value = "";
         }
 
     }

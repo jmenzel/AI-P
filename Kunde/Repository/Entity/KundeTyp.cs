@@ -8,6 +8,7 @@ namespace HES.Kunde.Repository.Entity
 {
     public class KundeTyp
     {
+        public virtual int ID { get; protected set; }
         public virtual KundenNrTyp kundenNr { get; protected set; }
         public virtual KundenLevel level { get; protected set; }
         public virtual string vorname { get; protected set; }
@@ -18,6 +19,5 @@ namespace HES.Kunde.Repository.Entity
         public virtual string ort { get; protected set; }
         public virtual int plz { get; protected set; }
         public virtual string land { get; protected set; }
-
     }
 }

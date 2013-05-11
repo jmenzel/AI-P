@@ -9,11 +9,13 @@ namespace HES.Lager.Repository.Entity
 {
     public class MeldungsNummerTyp
     {
-        public string mNummer { get; private set; }
+        public virtual string mNummer { get; protected set; }
 
         public MeldungsNummerTyp(string nr)
         {
             this.mNummer = nr;
         }
+
+        protected MeldungsNummerTyp() { }
     }
 }

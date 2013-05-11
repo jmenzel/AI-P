@@ -12,11 +12,20 @@ namespace HES.Mappings
     {
         public LagerMap()
         {
-            Id(x => x.mNr);
+            Id(x => x.ID);
+            HasOne(x => x.mNr).Cascade.All();
             Map(x => x.date);
             Map(x => x.menge);
             Map(x => x.lieferSchein);
             HasOne(x => x.prod).Constrained().ForeignKey();
+        }
+    }
+
+    public class MeldungsNummerMap : ClassMap<MeldungsNummerTyp>
+    {
+        public MeldungsNummerMap()
+        {
+            Id(x => x.mNummer);
         }
     }
 }

@@ -18,22 +18,22 @@ namespace HES.Lager.Logic
             prodRepo = new ProduktRepo();
         }
 
-        public string erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl)
+        public MeldungsNummerTyp erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl)
         {
             throw new NotImplementedException();
         }
 
-        public string erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein)
+        public MeldungsNummerTyp erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein)
         {
             throw new NotImplementedException();
         }
 
-        public bool pruefeLagerbestand(ProduktDetailsTyp prod, int Anzahl)
+        public bool pruefeLagerbestand(ProduktNummerTyp prod, int Anzahl)
         {
             throw new NotImplementedException();
         }
 
-        public string erstelleProdukt(ProduktDetailsTyp prod)
+        public ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod)
         {
             return prodRepo.erstelleProdukt(prod);
         }
