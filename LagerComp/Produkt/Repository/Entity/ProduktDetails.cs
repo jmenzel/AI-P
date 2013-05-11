@@ -14,7 +14,7 @@ namespace HES.Lager.Produkt.Repository.Entity
 
         }
 
-        public ProduktDetails(string prodNr, string name)
+        public ProduktDetails(ProduktNummerTyp prodNr, string name)
             : base(prodNr, name)
         {
 

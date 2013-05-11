@@ -9,13 +9,13 @@ namespace HES.Lager.Produkt.Repository
 {
     class ProduktRepo : ICompProdukt
     {
-        string te = "";
+        string te = "A_";
 
-        public string erstelleProdukt(ProduktDetailsTyp prod)
+        public ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod)
         {
             //ProduktDetails pd = ProduktDetails.fromTyp(prod);
 
-            ProduktDetails pd = new ProduktDetails(te += "A", prod.name);
+            ProduktDetails pd = new ProduktDetails(new ProduktNummerTyp(te += "A"), prod.name);
 
             //TODO Prüfen ob Produktnummer vergeben
             //Wenn nicht, eine erstellen (vorm speichern)

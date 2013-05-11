@@ -8,21 +8,19 @@ namespace HES.Lager.Produkt.Repository.Entity
 {
     public class ProduktDetailsTyp
     {
-        public virtual string prodNr { get; protected set; }
+        public virtual int ID { get; protected set; }
+        public virtual ProduktNummerTyp prodNr { get; protected set; }
         public virtual string name { get; protected set; }
 
         protected ProduktDetailsTyp()
-        {
-            prodNr = "";
-            name = "";
-        }
+        { }
 
         public ProduktDetailsTyp(string name)
         {
             this.name = name;
         }
 
-        public ProduktDetailsTyp(string nr, string name)
+        public ProduktDetailsTyp(ProduktNummerTyp nr, string name)
         {
             this.prodNr = nr;
             this.name = name;

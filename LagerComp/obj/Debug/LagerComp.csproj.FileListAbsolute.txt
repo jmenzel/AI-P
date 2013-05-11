@@ -8,3 +8,4 @@ E:\Projekte\Studium\AI-P\LagerComp\bin\Debug\NHibernate.dll
 E:\Projekte\Studium\AI-P\LagerComp\bin\Debug\FluentNHibernate.xml
 E:\Projekte\Studium\AI-P\LagerComp\bin\Debug\Iesi.Collections.xml
 E:\Projekte\Studium\AI-P\LagerComp\bin\Debug\NHibernate.xml
+E:\Projekte\Studium\AI-P\LagerComp\obj\Debug\LagerComp.csprojResolveAssemblyReference.cache

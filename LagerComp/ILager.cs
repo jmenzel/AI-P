@@ -10,10 +10,10 @@ namespace HES.Lager
 {
     public interface ILager
     {
-        string erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl);
-        string erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein);
-        bool pruefeLagerbestand(ProduktDetailsTyp prod, int Anzahl);
-        string erstelleProdukt(ProduktDetailsTyp prod);
+        MeldungsNummerTyp erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl);
+        MeldungsNummerTyp erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein);
+        bool pruefeLagerbestand(ProduktNummerTyp prod, int Anzahl);
+        ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
         ProduktDetailsTyp[] getProdukte();
     }
 }
