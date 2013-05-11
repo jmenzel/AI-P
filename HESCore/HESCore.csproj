@@ -62,6 +62,7 @@
     <Compile Include="Mappings\AuftragMap.cs" />
     <Compile Include="Mappings\KundeMap.cs" />
     <Compile Include="Mappings\LagerMap.cs" />
+    <Compile Include="Mappings\RechnungsMapping.cs" />
     <Compile Include="Persistance\Database.cs" />
     <Compile Include="Mappings\ProduktMap.cs" />
     <Compile Include="Programm.cs" />

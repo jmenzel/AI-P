@@ -1,0 +1,10 @@
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Kunde.pdb
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\FluentNHibernate.dll
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Iesi.Collections.dll
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\NHibernate.dll
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\FluentNHibernate.xml
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\Iesi.Collections.xml
+E:\Projekte\Studium\AI-P\Kunde\bin\Debug\NHibernate.xml
+E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.dll
+E:\Projekte\Studium\AI-P\Kunde\obj\Debug\Kunde.pdb

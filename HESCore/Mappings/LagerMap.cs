@@ -13,7 +13,7 @@ namespace HES.Mappings
         public LagerMap()
         {
             Id(x => x.ID);
-            HasOne(x => x.mNr).Cascade.All();
+            References(x => x.mNr).Cascade.All().Not.LazyLoad();
             Map(x => x.date);
             Map(x => x.menge);
             Map(x => x.lieferSchein);
