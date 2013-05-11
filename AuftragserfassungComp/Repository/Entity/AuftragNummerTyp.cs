@@ -8,7 +8,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 {
     public class AuftragNummerTyp
     {
-        public String nr { get; protected set; }
+        public virtual String nr { get; protected set; }
 
         //TODO: Auftragnummer prüfen und dann erst erstellen!
         public AuftragNummerTyp(String nr)
