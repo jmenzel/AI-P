@@ -58,6 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="Mappings\AngebotMap.cs" />
+    <Compile Include="Mappings\AuftragMap.cs" />
     <Compile Include="Mappings\KundeMap.cs" />
     <Compile Include="Mappings\LagerMap.cs" />
     <Compile Include="Persistance\Database.cs" />

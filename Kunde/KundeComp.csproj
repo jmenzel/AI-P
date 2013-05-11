@@ -52,7 +52,7 @@
     <Compile Include="IKunde.cs" />
     <Compile Include="Logic\Kunde.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Entity\Kunde.cs" />
+    <Compile Include="Repository\Entity\KundenLevel.cs" />
     <Compile Include="Repository\Entity\KundenNrTyp.cs" />
     <Compile Include="Repository\Entity\KundeTyp.cs" />
     <Compile Include="Repository\KundenRepo.cs" />

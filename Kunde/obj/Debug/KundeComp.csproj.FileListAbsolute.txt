@@ -22,3 +22,4 @@ Y:\Documents\Git\AI-P\Kunde\bin\Debug\FluentNHibernate.xml
 Y:\Documents\Git\AI-P\Kunde\bin\Debug\Iesi.Collections.xml
 Y:\Documents\Git\AI-P\Kunde\bin\Debug\NHibernate.xml
 >>>>>>> Stashed changes
+Y:\Documents\Git\AI-P\Kunde\obj\Debug\KundeComp.csprojResolveAssemblyReference.cache
