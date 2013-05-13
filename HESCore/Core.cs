@@ -70,9 +70,9 @@ namespace HES.Core
             var angebotNr2 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 9978.9872394, kunde1);
             var angebotNr3 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 923939.12, kunde2);
 
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr1)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr2)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr3)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde2.kundenNr).name);
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr1)).angebotNrTyp.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr2)).angebotNrTyp.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr3)).angebotNrTyp.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde2.kundenNr).name);
     
         }
     }

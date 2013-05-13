@@ -59,7 +59,6 @@ namespace HES.AuftragserfassungComp.Repository
         }
 
 
-        //GEHT NICHT WEIL KUNDEN NOCH ERSTELLT WERDEN MÜSSEN!!! PENIS PENIS PENIS
         public AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr,bool istAbgeschlosse, DateTime erstelltAm)
         {
             AuftragNrTyp auftragNr;

@@ -10,15 +10,15 @@ namespace HES.AuftragserfassungComp.Repository.Entity
     public class AngebotTyp
     {
          public virtual int ID { get; protected set; }
-         public virtual AngebotNrTyp nr { get; protected set; }
+         public virtual AngebotNrTyp angebotNrTyp { get; protected set; }
          public virtual DateTime gueltigAb { get; protected set; }
          public virtual DateTime gueltigBis { get; protected set; }
          public virtual double preis { get; protected set; }
          public virtual KundeTyp kunde { get; protected set; }
 
-         public AngebotTyp(AngebotNrTyp nr, DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde)
+         public AngebotTyp(AngebotNrTyp angebotNr, DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde)
          {
-             this.nr = nr;
+             this.angebotNrTyp = angebotNr;
              this.gueltigAb = gueltigAb;
              this.gueltigBis = gueltigBis;
              this.preis = preis;
