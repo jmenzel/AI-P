@@ -27,7 +27,6 @@ namespace HES.Mappings
             Map(x => x.vorname);
             Map(x => x.name);
             Map(x => x.geburtstag);
-            Map(x => x.hausnr);
             Map(x => x.strasse);
             Map(x => x.ort);
             Map(x => x.plz);

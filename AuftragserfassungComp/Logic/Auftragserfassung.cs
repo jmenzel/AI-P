@@ -15,7 +15,7 @@ namespace HES.AuftragserfassungComp.Logic
 
         public Auftragserfassung() { }
 
-        public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundenNrTyp kunde)
+        public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde)
         {
             return repo.erstelleAngebot(gueltigAb,gueltigBis,preis,kunde);
         }

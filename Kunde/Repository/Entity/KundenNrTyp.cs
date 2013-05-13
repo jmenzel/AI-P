@@ -8,6 +8,7 @@ namespace HES.Kunde.Repository.Entity
 {
     public class KundenNrTyp
     {
+        private readonly String contraction = "KD_";
         public virtual string value { get; protected set;}
 
         /// <summary>
@@ -17,13 +18,10 @@ namespace HES.Kunde.Repository.Entity
         /// <param name="nr"></param>
         public KundenNrTyp(string nr)
         {
-            this.value = nr;
+            this.value = contraction + nr;
         }
 
-        protected KundenNrTyp()
-        {
-            value = "";
-        }
+        protected KundenNrTyp() { }
 
     }
 }

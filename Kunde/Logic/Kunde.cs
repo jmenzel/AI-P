@@ -18,24 +18,26 @@ namespace HES.Kunde.Logic
         }
 
 
-        public KundenNrTyp createKunden(string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
+        public KundenNrTyp erstelleKunden(string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, string plz, string ort, string land)
         {
-            return repo.createKunden(nachname, vorname, geburtsdatum, level, strase, plz, ort, land);
+            return repo.erstelleKunden(nachname, vorname, geburtsdatum, level, strase, plz, ort, land);
         }
 
-        public bool deleteKunde(KundenNrTyp nr)
+        public bool loescheKunden(KundenNrTyp nr)
         {
-            return repo.deleteKunde(nr);
+            return repo.loescheKunden(nr);
         }
 
-        public bool updateKunde(KundenNrTyp nr, string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strase, int plz, string ort, string land)
-        {
-            return repo.updateKunde(nr, nachname, vorname, geburtsdatum, level, strase, plz, ort, land);
-        }
 
         public IList<KundeTyp> getKundenByName(string name)
         {
             return repo.getKundenByName(name);
+        }
+
+
+        public bool updateKunde(KundenNrTyp nr, string nachname, string vorname, DateTime geburtsdatum, KundenLevel level, string strasse, string plz, string ort, string land)
+        {
+            return repo.updateKunde(nr, nachname, vorname, geburtsdatum, level, strasse, plz, ort, land);
         }
     }
 }

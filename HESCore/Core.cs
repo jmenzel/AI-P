@@ -23,6 +23,7 @@ namespace HES.Core
         ILager lager;
         ITransport transport;
         IAuftragserfassung auftragserfassung;
+        IKunde kunden;
 
         public Core()
         {
@@ -51,16 +52,27 @@ namespace HES.Core
             {
                 Console.WriteLine(trans.nr.nr + " - " + trans.transportDienstleister + " - " + trans.lieferDatum);
             }
+            //-------------------------------------------------------------------
+            kunden = KundenKomp.getKundenComp(db);
+
+            kunden.erstelleKunden("Buskulic", "Dino", DateTime.Parse("26.05.1989"), KundenLevel.HighOrder, "Test 1", "20539", "Hamburg", "Deutschland");
+            kunden.erstelleKunden("Hans-Peter", "Arsch", DateTime.Parse("26.05.1989"), KundenLevel.Potentiell, "Test 1", "20539", "Hamburg", "Deutschland");
+            kunden.erstelleKunden("MamaUndPapa", "hattenMichNichtLieb", DateTime.Parse("26.05.1989"), KundenLevel.Regulaer, "Test 1", "20539", "Hamburg", "Deutschland");
+
+            var kunde0 = kunden.getKundeByKundenNr(new KundenNrTyp("0"));
+            var kunde1 = kunden.getKundenByName("Buskulic").ElementAt(0);
+            var kunde2 = kunden.getKundenByName("Hans-Peter").ElementAt(0);
+
 
             //-------------------------------------------------------------------
             auftragserfassung = AuftragserfassungKomp.getAuftragskomponenteComp(db);
-            var angebotNr1 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 388.34, new KundenNrTyp("blah"));
-            var angebotNr2 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 9978.9872394, new KundenNrTyp("blah"));
-            var angebotNr3 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 923939.12, new KundenNrTyp("blah"));
+            var angebotNr1 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 388.34, kunde1);
+            var angebotNr2 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 9978.9872394, kunde1);
+            var angebotNr3 = auftragserfassung.erstelleAngebot(DateTime.Now, DateTime.Now, 923939.12, kunde2);
 
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr1)));
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr2)));
-            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr3)));
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr1)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr2)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde1.kundenNr).name);
+            Console.WriteLine(auftragserfassung.holeAngebot((angebotNr3)).nr.nr + " - zu Kunden: " + kunden.getKundeByKundenNr(kunde2.kundenNr).name);
     
         }
     }

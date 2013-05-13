@@ -26,7 +26,7 @@ namespace HES.Mappings
             Map(x => x.gueltigAb);
             Map(x => x.gueltigBis);
             Map(x => x.preis);
-            HasOne(x => x.fuerKunde).Constrained().ForeignKey();
+            HasOne(x => x.kunde).Constrained().ForeignKey();
         }
     }
 }

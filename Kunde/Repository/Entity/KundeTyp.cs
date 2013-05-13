@@ -14,20 +14,18 @@ namespace HES.Kunde.Repository.Entity
         public virtual string vorname { get; protected set; }
         public virtual string name { get; protected set; }
         public virtual DateTime geburtstag { get; protected set; }
-        public virtual string hausnr { get; protected set; }
         public virtual string strasse { get; protected set; }
         public virtual string ort { get; protected set; }
         public virtual string plz { get; protected set; }
         public virtual string land { get; protected set; }
 
-        public KundeTyp(KundenNrTyp nr, KundenLevel lvl, string vorname, string name, DateTime geb, string hausnr, string strasse, string ort, string plz, string land)
+        public KundeTyp(KundenNrTyp nr, KundenLevel lvl, string vorname, string name, DateTime geb, string strasse, string ort, string plz, string land)
         {
             this.kundenNr = nr;
             this.level = lvl;
             this.vorname = vorname;
             this.name = name;
             this.geburtstag = geb;
-            this.hausnr = hausnr;
             this.strasse = strasse;
             this.ort = ort;
             this.plz = plz;
