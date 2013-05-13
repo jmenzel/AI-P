@@ -15,5 +15,7 @@ namespace HES.TransportComp.Repository.Entity
         {
             this.nr = nr;
         }
+
+        protected LiefernummerTyp() { }
     }
 }

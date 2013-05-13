@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace HES.Mappings
 {
     
-    public class AuftragsNummerMap : ClassMap<AuftragNummerTyp>
+    public class AuftragsNummerMap : ClassMap<AuftragNrTyp>
     {
         public AuftragsNummerMap()
         {
@@ -25,7 +25,6 @@ namespace HES.Mappings
             References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
-            HasOne(x => x.gehoertZuAngebot).Constrained().ForeignKey();
         }
     }
 

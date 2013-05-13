@@ -8,15 +8,25 @@ using HES.TransportComp.Repository;
 
 namespace HES.TransportComp.Logic
 {
-    public class Transportauftrag : ITransport
+    class Transportauftrag : ITransport
     {
-        private TransportRepo repo = new TransportRepo();
-        
+        private TransportRepo repo;
 
-        public TransportauftragTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, TransportauftragNummerTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        public Transportauftrag()
         {
-            return repo.erstelleTransportauftrag(liefernummer, nr, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister);
+            repo = new TransportRepo();
         }
+
+        public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        {
+            return repo.erstelleTransportauftrag(liefernummer, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister);
+        }
+
+        public TransportauftragTyp[] getTransportauftraege()
+        {
+            return repo.getTransportauftraege();
+        }
+
         public LiefernummerTyp erstelleLieferung(LieferdetailsTyp lieferung)
         {
             throw new NotImplementedException();

@@ -10,7 +10,7 @@ namespace HES.TransportComp.Repository.Entity
     {
         public virtual int ID { get; protected set; }
         public virtual LiefernummerTyp lieferNummer { get; protected set; }
-        public virtual TransportauftragNummerTyp nr { get; protected set; }
+        public virtual TransportauftragNrTyp nr { get; protected set; }
         public virtual DateTime ausgangsDatum { get; protected set; }
         public virtual bool lieferungErfolg { get; protected set; }
         public virtual DateTime lieferDatum { get; protected set; }
@@ -18,7 +18,7 @@ namespace HES.TransportComp.Repository.Entity
         public virtual String transportDienstleister { get; protected set; }
 
 
-        public TransportauftragTyp(LiefernummerTyp liefernummer, TransportauftragNummerTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        public TransportauftragTyp(LiefernummerTyp liefernummer, TransportauftragNrTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
         {
             this.lieferNummer = lieferNummer;
             this.nr = nr;

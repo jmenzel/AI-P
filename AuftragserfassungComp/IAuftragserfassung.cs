@@ -11,11 +11,11 @@ namespace HES.AuftragserfassungComp
     /// <summary>
     /// Schnittstelle für die Auftragserfassung
     /// </summary>
-    interface IAuftragserfassung
+    public interface IAuftragserfassung
     {
-        AngebotNummerTyp erstelleAngebot(AngebotTyp angebot, KundenNrTyp kunde);
-        AngebotTyp holeAngebot(AngebotNummerTyp nr);
-        AuftragNummerTyp erstelleAuftrag(AngebotNummerTyp nr);
-        void markiereAuftrag(AuftragNummerTyp auftrag, AuftragStatusTyp status);
+        AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundenNrTyp kundeNr);
+        AngebotTyp holeAngebot(AngebotNrTyp nr);
+        AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr,bool istAbgeschlossen, DateTime erstelltAm);
+        void markiereAuftrag(AuftragNrTyp auftrag, AuftragStatusTyp status);
     }
 }

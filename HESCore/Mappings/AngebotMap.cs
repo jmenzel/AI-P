@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace HES.Mappings
 {
 
-    class AngebotNummerMap : ClassMap<AngebotNummerTyp>
+    class AngebotNummerMap : ClassMap<AngebotNrTyp>
     {
         public AngebotNummerMap()
         {
@@ -26,6 +26,7 @@ namespace HES.Mappings
             Map(x => x.gueltigAb);
             Map(x => x.gueltigBis);
             Map(x => x.preis);
+            HasOne(x => x.fuerKunde).Constrained().ForeignKey();
         }
     }
 }

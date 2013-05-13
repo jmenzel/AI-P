@@ -13,24 +13,27 @@ namespace HES.AuftragserfassungComp.Logic
     {
         IAuftragserfassung repo = new AuftragserfassungRepo();
 
-        public AngebotNummerTyp erstelleAngebot(AngebotTyp angebot, KundenNrTyp kunde)
+        public Auftragserfassung() { }
+
+        public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundenNrTyp kunde)
         {
-            return repo.erstelleAngebot(angebot, kunde);
+            return repo.erstelleAngebot(gueltigAb,gueltigBis,preis,kunde);
         }
 
-        public AngebotTyp holeAngebot(AngebotNummerTyp nr)
+        public AngebotTyp holeAngebot(AngebotNrTyp nr)
         {
             return repo.holeAngebot(nr);
         }
 
-        public AuftragNummerTyp erstelleAuftrag(AngebotNummerTyp nr)
+        public AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr,bool istAbgeschlosse, DateTime erstelltAm)
         {
-            return repo.erstelleAuftrag(nr);
+            return repo.erstelleAuftrag(nr,istAbgeschlosse,erstelltAm);
         }
 
-        public void markiereAuftrag(AuftragNummerTyp auftrag, AuftragStatusTyp status)
+        public void markiereAuftrag(AuftragNrTyp auftrag, AuftragStatusTyp status)
         {
              repo.markiereAuftrag(auftrag, status);
         }
+
     }
 }
