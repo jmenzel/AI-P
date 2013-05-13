@@ -7,21 +7,8 @@ using HES.TransportComp.Repository.Entity;
 
 namespace HES.TransportComp.Logic
 {
-    class Lieferauftrag : ITransport
+    public class Lieferauftrag
     {
-        public TransportauftragTyp erstelleTransportauftrag(LiefernummerTyp nur)
-        {
-            throw new NotImplementedException();
-        }
-
-        public LiefernummerTyp erstelleLieferung(LieferdetailsTyp lieferung)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void markiereLieferung(LieferdetailsTyp lieferung)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

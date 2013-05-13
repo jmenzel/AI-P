@@ -54,7 +54,10 @@
     <Compile Include="ITransport.cs" />
     <Compile Include="Repository\Entity\LieferdetailsTyp.cs" />
     <Compile Include="Repository\Entity\LiefernummerTyp.cs" />
+    <Compile Include="Repository\Entity\TransportauftragNummerTyp.cs" />
     <Compile Include="Repository\Entity\TransportauftragTyp.cs" />
+    <Compile Include="Repository\TransportRepo.cs" />
+    <Compile Include="TransportKomp.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

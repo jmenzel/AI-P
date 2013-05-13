@@ -6,7 +6,28 @@ using System.Threading.Tasks;
 
 namespace HES.TransportComp.Repository.Entity
 {
-    class TransportauftragTyp
+    public class TransportauftragTyp
     {
+        public virtual int ID { get; protected set; }
+        public virtual LiefernummerTyp lieferNummer { get; protected set; }
+        public virtual TransportauftragNummerTyp nr { get; protected set; }
+        public virtual DateTime ausgangsDatum { get; protected set; }
+        public virtual bool lieferungErfolg { get; protected set; }
+        public virtual DateTime lieferDatum { get; protected set; }
+        //Hier evlt. KundeTyp oder eigenen LieferanteTyp?
+        public virtual String transportDienstleister { get; protected set; }
+
+
+        public TransportauftragTyp(LiefernummerTyp liefernummer, TransportauftragNummerTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        {
+            this.lieferNummer = lieferNummer;
+            this.nr = nr;
+            this.ausgangsDatum = ausgangsDatum;
+            this.lieferungErfolg = lieferungErfolg;
+            this.lieferDatum = lieferDatum;
+            this.transportDienstleister = transportDienstleister;
+        }
+
+        protected TransportauftragTyp() { }
     }
 }

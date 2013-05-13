@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.Kunde
 {
-    public static class KundenComp
+    public static class KundenKomp
     {
 
         public static IKunde getKundenComp()

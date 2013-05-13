@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KundenComp.cs" />
+    <Compile Include="KundenKomp.cs" />
     <Compile Include="IKunde.cs" />
     <Compile Include="Logic\Kunde.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

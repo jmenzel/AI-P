@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HES.TransportComp.Repository.Entity
+namespace HES.TransportComp
 {
-    //Wird gerade nicht verwendet!
-    public class LieferdetailsTyp
+    class TransportKomp
     {
+
     }
 }

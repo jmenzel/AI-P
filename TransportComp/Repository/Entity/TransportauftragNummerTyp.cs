@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace HES.TransportComp.Repository.Entity
 {
-    public class LiefernummerTyp
+    public class TransportauftragNummerTyp
     {
+
         public virtual String nr { get; protected set; }
 
-        //TODO: Nummer validieren!
-        public LiefernummerTyp(string nr)
+        public TransportauftragNummerTyp(String nr)
         {
             this.nr = nr;
         }
+
+        protected TransportauftragNummerTyp() { }
     }
 }

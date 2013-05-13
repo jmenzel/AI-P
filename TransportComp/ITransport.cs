@@ -12,7 +12,7 @@ namespace HES.TransportComp
     /// </summary>
     interface ITransport
     {
-        TransportauftragTyp erstelleTransportauftrag(LiefernummerTyp nur);
+        TransportauftragTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, TransportauftragNummerTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister);
         LiefernummerTyp erstelleLieferung(LieferdetailsTyp lieferung);
         void markiereLieferung(LieferdetailsTyp lieferung);
     }
