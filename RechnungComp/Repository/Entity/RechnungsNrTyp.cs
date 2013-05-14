@@ -17,5 +17,10 @@ namespace RechnungComp.Repository.Entity
         }
 
         protected RechnungsNrTyp() { }
+
+        public override string ToString()
+        {
+            return "Nr: " + rNr;
+        }
     }
 }

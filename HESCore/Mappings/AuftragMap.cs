@@ -24,7 +24,7 @@ namespace HES.Mappings
         {
             Id(x => x.ID);
             References(x => x.nr).Cascade.All().Not.LazyLoad();
-            References(x => x.gehoertZuAngebot);
+            References(x => x.gehoertZuAngebot).Not.LazyLoad();
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
         }

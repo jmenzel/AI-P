@@ -21,7 +21,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 
         public override string ToString()
         {
-            return "Angebotnr.: " + nr;
+            return "Nr: " + nr;
         }
     }
 }

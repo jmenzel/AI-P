@@ -50,5 +50,15 @@ namespace HES.TransportComp.Repository
         {
             throw new NotImplementedException();
         }
+
+
+        public TransportauftragTyp getTransportAuftrag(TransportauftragNrTyp nr)
+        {
+            using (var session = TransportKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                return session.CreateCriteria(typeof(TransportauftragTyp)).Add(Restrictions.Like("nr",nr)).List<TransportauftragTyp>().ElementAt(0);
+            }
+        }
     }
 }

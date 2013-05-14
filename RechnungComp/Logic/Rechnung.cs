@@ -24,5 +24,11 @@ namespace RechnungComp.Logic
         {
             return rechnungRepo.erstelleRechnung(auftrag);
         }
+
+
+        public RechnungsTyp getRechnung(RechnungsNrTyp nr)
+        {
+            return rechnungRepo.getRechnung(nr);
+        }
     }
 }

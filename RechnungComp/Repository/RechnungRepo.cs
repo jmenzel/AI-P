@@ -27,5 +27,16 @@ namespace RechnungComp.Repository
                 return nr;
             }
         }
+
+
+        public RechnungsTyp getRechnung(RechnungsNrTyp nr)
+        {
+            using (var session = RechnungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                return session.CreateCriteria(typeof(RechnungsTyp)).Add(Restrictions.Like("nr", nr)).List<RechnungsTyp>().ElementAt(0);
+            } 
+
+        }
     }
 }

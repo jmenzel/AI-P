@@ -33,7 +33,7 @@ namespace HES.TransportComp.Repository.Entity
         public override string ToString()
         {
             return "Liefernummer: " + lieferNummer
-                + "\nTransportnummer: " + nr
+                + "\nTransportnummer: " + nr.ToString()
                 + "\nAusgangsdatum: " + ausgangsDatum.Date
                 + "\nLieferdatum: " + lieferDatum.Date
                 + "\nTransportdienstleister: " + transportDienstleister;

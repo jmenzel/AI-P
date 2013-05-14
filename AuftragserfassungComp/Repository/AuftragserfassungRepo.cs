@@ -94,8 +94,7 @@ namespace HES.AuftragserfassungComp.Repository
             using (var session = AuftragserfassungKomp.getDB().OpenSession())
             using (var transaction = session.BeginTransaction())
             {
-            var x =  session.CreateCriteria(typeof(AuftragTyp)).Add(Restrictions.Like("nr", auftragNr)).List<AuftragTyp>().ElementAt(0);
-                return x;
+                return session.CreateCriteria(typeof(AuftragTyp)).Add(Restrictions.Like("nr", auftragNr)).List<AuftragTyp>().ElementAt(0);
             } 
         }
     }

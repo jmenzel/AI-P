@@ -17,5 +17,10 @@ namespace HES.TransportComp.Repository.Entity
         }
 
         protected TransportauftragNrTyp() { }
+
+        public override string ToString()
+        {
+            return "Nr: " + nr;
+        }
     }
 }

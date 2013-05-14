@@ -37,6 +37,9 @@ namespace HES.TransportComp.Logic
             throw new NotImplementedException();
         }
 
-        
+        public TransportauftragTyp getTransportAuftrag(TransportauftragNrTyp nr)
+        {
+            return repo.getTransportAuftrag(nr);
+        }
     }
 }

@@ -26,7 +26,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 
         public override string ToString()
         {
-            return "Auftrag mit " + nr.ToString() + " aus Angebot " + gehoertZuAngebot.ToString()
+            return "Auftrag mit Nummer: " + nr.ToString() + " aus Angebot mit Nummer: " + gehoertZuAngebot.ToString()
                 + "\nErstellt am: " + erstelltAm
                 + "\n Auftrag abgeschlossen: " + istAbgeschlossen;
                 

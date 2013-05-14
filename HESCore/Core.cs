@@ -105,10 +105,10 @@ namespace HES.Core
 
             var transportAuftrag = transport.erstelleTransportauftrag(new LiefernummerTyp("LN_1"), DateTime.Parse("25.05.2013"), true, DateTime.Parse("25.05.2013"), "FEDEX");
 
-            Console.WriteLine("Transportauftrag erstellt: " + transportAuftrag);
+            Console.WriteLine("Transportauftrag erstellt: " + transport.getTransportAuftrag(transportAuftrag));
             
             var rechnung_1 = rechnung.erstelleRechnung(auftragserfassung.holeAuftrag(auftrag_neu));
-            Console.WriteLine("Rechnung erstellt: " + rechnung_1);
+            Console.WriteLine("\nRechnung erstellt:\n" + rechnung.getRechnung(rechnung_1));
 
             Console.ReadKey();
             #endregion
