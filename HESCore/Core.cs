@@ -110,7 +110,6 @@ namespace HES.Core
             var rechnung_1 = rechnung.erstelleRechnung(auftragserfassung.holeAuftrag(auftrag_neu));
             Console.WriteLine("\nRechnung erstellt:\n" + rechnung.getRechnung(rechnung_1));
 
-            Console.ReadKey();
             #endregion
         }
     }
