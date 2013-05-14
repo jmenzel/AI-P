@@ -10,7 +10,6 @@ namespace HES.AuftragserfassungComp.Repository.Entity
     {
         public virtual int ID { get; protected set; }
         public virtual AuftragNrTyp nr { get; protected set; }
-        //public virtual AuftragStatusTyp status { get; protected set; }
         public virtual AngebotNrTyp gehoertZuAngebot { get; protected set; }
         public virtual Boolean istAbgeschlossen { get; protected set; }
         public virtual DateTime erstelltAm { get; protected set; }
@@ -24,6 +23,13 @@ namespace HES.AuftragserfassungComp.Repository.Entity
         }
 
         protected AuftragTyp() { }
-    
+
+        public override string ToString()
+        {
+            return "Auftrag mit " + nr.ToString() + " aus Angebot " + gehoertZuAngebot.ToString()
+                + "\nErstellt am: " + erstelltAm
+                + "\n Auftrag abgeschlossen: " + istAbgeschlossen;
+                
+        }
     }
 }

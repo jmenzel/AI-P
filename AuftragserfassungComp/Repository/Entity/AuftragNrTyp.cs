@@ -19,5 +19,10 @@ namespace HES.AuftragserfassungComp.Repository.Entity
         }
 
         protected AuftragNrTyp() { }
+
+        public override string ToString()
+        {
+            return "Auftragnr.: " + nr;
+        }
     }
 }

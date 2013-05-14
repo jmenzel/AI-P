@@ -1,4 +1,5 @@
 ﻿using HES.Lager.Produkt.Repository.Entity;
+using HES.Lager.Repository.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,8 @@ namespace HES.Lager.Produkt.Repository
     {
         ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
         ProduktDetailsTyp[] getProdukte();
+        ProduktDetailsTyp getProdukt(ProduktNummerTyp prodNr);
+        MeldungsNummerTyp erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl);
+        
     }
 }

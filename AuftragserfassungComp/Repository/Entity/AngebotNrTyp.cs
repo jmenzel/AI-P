@@ -9,6 +9,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
     public class AngebotNrTyp
     {
         private readonly String contraction = "AN_";
+        public virtual int ID { get; protected set; }
         public virtual String nr { get; protected set; }
 
         public AngebotNrTyp(String nr)
@@ -18,5 +19,9 @@ namespace HES.AuftragserfassungComp.Repository.Entity
 
         protected AngebotNrTyp() { }
 
+        public override string ToString()
+        {
+            return "Angebotnr.: " + nr;
+        }
     }
 }

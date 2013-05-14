@@ -20,7 +20,7 @@ namespace HES.Lager.Logic
 
         public MeldungsNummerTyp erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl)
         {
-            throw new NotImplementedException();
+            return prodRepo.erstelleWarenausgang(prod, Anzahl);
         }
 
         public MeldungsNummerTyp erstelleWareneingang(ProduktDetailsTyp prod, int Anzahl, object lieferSchein)
@@ -41,6 +41,12 @@ namespace HES.Lager.Logic
         public ProduktDetailsTyp[] getProdukte()
         {
             return prodRepo.getProdukte();
+        }
+
+
+        public ProduktDetailsTyp getProdukt(ProduktNummerTyp prodNr)
+        {
+            return prodRepo.getProdukt(prodNr);
         }
     }
 }

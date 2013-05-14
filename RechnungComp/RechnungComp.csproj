@@ -49,9 +49,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IRechnung.cs" />
+    <Compile Include="Logic\Rechnung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RechnungKomp.cs" />
     <Compile Include="Repository\Entity\RechnungsNrTyp.cs" />
     <Compile Include="Repository\Entity\RechnungsTyp.cs" />
+    <Compile Include="Repository\RechnungRepo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AuftragserfassungComp\AuftragserfassungComp.csproj">

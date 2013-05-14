@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AuftragserfassungKomp.cs" />
     <Compile Include="IAuftragserfassung.cs" />
+    <Compile Include="IAuftragserfassungIntern.cs" />
     <Compile Include="Logic\Auftragserfassung.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuftragserfassungRepo.cs" />
@@ -70,6 +71,10 @@
     <ProjectReference Include="..\Kunde\KundeComp.csproj">
       <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>
       <Name>KundeComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LagerComp\LagerComp.csproj">
+      <Project>{7b019172-ddf9-45e6-9a72-1181772da7ef}</Project>
+      <Name>LagerComp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

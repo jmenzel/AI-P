@@ -22,10 +22,9 @@ namespace HES.Mappings
         public AngebotMap()
         {
             Id(x => x.ID);
-            References(x => x.angebotNrTyp).Cascade.All().Not.LazyLoad();
+            References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.gueltigAb);
             Map(x => x.gueltigBis);
-            Map(x => x.preis);
             HasOne(x => x.kunde).Constrained().ForeignKey();
         }
     }

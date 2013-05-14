@@ -15,5 +15,6 @@ namespace HES.Lager
         bool pruefeLagerbestand(ProduktNummerTyp prod, int Anzahl);
         ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
         ProduktDetailsTyp[] getProdukte();
+        ProduktDetailsTyp getProdukt(ProduktNummerTyp prodNr);
     }
 }

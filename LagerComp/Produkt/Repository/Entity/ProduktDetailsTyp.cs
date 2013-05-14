@@ -11,6 +11,7 @@ namespace HES.Lager.Produkt.Repository.Entity
         public virtual int ID { get; protected set; }
         public virtual ProduktNummerTyp prodNr { get; protected set; }
         public virtual string name { get; protected set; }
+        public virtual double preis { get; protected set; }
 
         protected ProduktDetailsTyp()
         { }

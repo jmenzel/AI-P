@@ -33,6 +33,17 @@ namespace HES.Kunde.Repository.Entity
         }
 
         protected KundeTyp() { }
+
+        public override string ToString()
+        {
+            return "Kundennr.: " + kundenNr
+                + "\nVorname: " + vorname
+                + "\nNachname: " + name
+                + "\nStraße: " + strasse
+                + "\nOrt: " + ort
+                + "\nPlz: " + plz
+                + "\nLand: " + land;
+        }
     }
 
 

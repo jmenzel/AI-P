@@ -16,6 +16,7 @@ namespace HES.Mappings
             Id(x => x.nr);
         }
     }
+
     
     public class AuftragMap : ClassMap<AuftragTyp>
     {
@@ -23,6 +24,7 @@ namespace HES.Mappings
         {
             Id(x => x.ID);
             References(x => x.nr).Cascade.All().Not.LazyLoad();
+            References(x => x.gehoertZuAngebot);
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
         }

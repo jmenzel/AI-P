@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using HES.AuftragserfassungComp.Repository.Entity;
 using HES.Kunde.Repository.Entity;
 using NHibernate.Criterion;
+using HES.Lager.Repository.Entity;
 
 namespace HES.AuftragserfassungComp.Repository
 {
-    class AuftragserfassungRepo : IAuftragserfassung
+    class AuftragserfassungRepo : IAuftragserfassungIntern
     {
         /// <summary>
         /// Speichert ein neues Angebot in der Datenbank
@@ -85,6 +86,17 @@ namespace HES.AuftragserfassungComp.Repository
             throw new NotImplementedException();
         }
 
-        
+
+
+
+        public AuftragTyp holeAuftrag(AuftragNrTyp auftragNr)
+        {
+            using (var session = AuftragserfassungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+            var x =  session.CreateCriteria(typeof(AuftragTyp)).Add(Restrictions.Like("nr", auftragNr)).List<AuftragTyp>().ElementAt(0);
+                return x;
+            } 
+        }
     }
 }

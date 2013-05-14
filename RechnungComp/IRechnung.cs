@@ -11,6 +11,6 @@ namespace RechnungComp
 {
     public interface IRechnung
     {
-        RechnungsNrTyp erstelleRechnung(KundenNrTyp kndNr, AuftragTyp auftrag);
+        RechnungsNrTyp erstelleRechnung(AuftragTyp auftrag);
     }
 }

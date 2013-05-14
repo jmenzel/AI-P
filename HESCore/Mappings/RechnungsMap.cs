@@ -17,6 +17,7 @@ namespace HES.Mappings
             References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.IstBezahlt);
             Map(x => x.RechnungsDatum);
+            HasOne(x => x.fuerAuftrag).ForeignKey();
         }
     }
 

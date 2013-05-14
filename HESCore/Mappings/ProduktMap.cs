@@ -15,6 +15,7 @@ namespace HES.Core.Mappigns
             Id(x => x.ID);
             References(x => x.prodNr).Cascade.All().Not.LazyLoad();
             Map(x => x.name);
+            Map(x => x.preis);
         }
     }
 

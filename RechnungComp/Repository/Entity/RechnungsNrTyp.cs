@@ -8,11 +8,12 @@ namespace RechnungComp.Repository.Entity
 {
     public class RechnungsNrTyp
     {
+        private readonly String contraction = "RB_";
         public virtual string rNr { get; protected set; }
 
         public RechnungsNrTyp(string nr)
         {
-            this.rNr = nr;
+            this.rNr = contraction + nr;
         }
 
         protected RechnungsNrTyp() { }
