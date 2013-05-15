@@ -103,7 +103,7 @@ namespace HES.Core
             Console.WriteLine("\n...Warenausgänge erstellt: " + warenausgangsMeldungLaptops + "\n" + warenausgangsMeldungFestplatte);
             Console.WriteLine("\n...Erstelle Transportauftrag: ");
 
-            var transportAuftrag = transport.erstelleTransportauftrag(new LiefernummerTyp("LN_1"), DateTime.Parse("25.05.2013"), true, DateTime.Parse("25.05.2013"), "FEDEX");
+            var transportAuftrag = transport.erstelleTransportauftrag(new LiefernummerTyp("LN_1"), DateTime.Parse("25.05.2013"), true, DateTime.Parse("25.05.2013"), "FEDEX",auftrag_neu);
 
             Console.WriteLine("Transportauftrag erstellt: " + transport.getTransportAuftrag(transportAuftrag));
             

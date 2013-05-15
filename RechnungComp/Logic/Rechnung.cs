@@ -1,5 +1,4 @@
 ﻿using HES.AuftragserfassungComp.Repository.Entity;
-using HES.Kunde.Repository.Entity;
 using RechnungComp.Repository;
 using RechnungComp.Repository.Entity;
 using System;

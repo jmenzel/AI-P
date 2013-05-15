@@ -1,4 +1,5 @@
-﻿using HES.TransportComp.Repository.Entity;
+﻿using HES.AuftragserfassungComp.Repository.Entity;
+using HES.TransportComp.Repository.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace HES.TransportComp
     /// </summary>
     public interface ITransport
     {
-        TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister);
+        TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag);
         //Macht erstmal keinen Sinn, nur Testhalber um zu sehen was da drin steckt!
         TransportauftragTyp getTransportAuftrag(TransportauftragNrTyp nr);
         TransportauftragTyp[] getTransportauftraege();

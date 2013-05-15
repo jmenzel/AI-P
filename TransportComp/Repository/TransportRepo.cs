@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using HES.TransportComp.Repository.Entity;
 using NHibernate.Criterion;
+using HES.AuftragserfassungComp.Repository.Entity;
 
 namespace HES.TransportComp.Repository
 {
     class TransportRepo : ITransport
     {
-        public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag
+            )
         {
             TransportauftragNrTyp transNr;
 
@@ -22,7 +24,7 @@ namespace HES.TransportComp.Repository
                 var maxID = session.CreateCriteria(typeof(TransportauftragTyp)).SetProjection(Projections.Max("ID")).UniqueResult();
                 transNr = new TransportauftragNrTyp(maxID != null ? Convert.ToString(maxID) : "0");
 
-                TransportauftragTyp transportauftrag = new TransportauftragTyp(liefernummer,  transNr, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister);
+                TransportauftragTyp transportauftrag = new TransportauftragTyp(liefernummer,  transNr, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister,auftrag);
 
                 session.SaveOrUpdate(transportauftrag);
                 transaction.Commit();

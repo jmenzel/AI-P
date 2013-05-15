@@ -32,6 +32,7 @@ namespace HES.Mappings
         {
             Id(x => x.ID);
             References(x => x.nr).Cascade.All().Not.LazyLoad();
+            References(x => x.auftrag).Not.LazyLoad();
             Map(x => x.lieferDatum);
             Map(x => x.ausgangsDatum);
             Map(x => x.lieferungErfolg);

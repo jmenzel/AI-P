@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HES.TransportComp.Repository.Entity;
 using HES.TransportComp.Repository;
+using HES.AuftragserfassungComp.Repository.Entity;
 
 namespace HES.TransportComp.Logic
 {
@@ -17,9 +18,9 @@ namespace HES.TransportComp.Logic
             repo = new TransportRepo();
         }
 
-        public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister)
+        public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag)
         {
-            return repo.erstelleTransportauftrag(liefernummer, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister);
+            return repo.erstelleTransportauftrag(liefernummer, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister,auftrag);
         }
 
         public TransportauftragTyp[] getTransportauftraege()

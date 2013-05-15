@@ -61,10 +61,6 @@
       <Project>{fd178803-d4dc-4400-962f-b140f5e796c7}</Project>
       <Name>AuftragserfassungComp</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Kunde\KundeComp.csproj">
-      <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>
-      <Name>KundeComp</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
