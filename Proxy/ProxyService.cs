@@ -17,11 +17,14 @@ namespace ProxyService
     class ProxyService
     {
         public const short SERVER_FAIL_TIME = 20;
+        public const short SERVER_SESSION_INFO_CAPACITY = 50;
 
-        private IDictionary<Guid, ServerInfo> registeredServer = new Dictionary<Guid, ServerInfo>();
+
+        private IDictionary<Guid, ServerSession> registeredServer = new Dictionary<Guid, ServerSession>();
         private IDictionary<Guid, uint> lastServerUpdate = new Dictionary<Guid, uint>();
         private IDictionary<Guid, ClientInfo> registeredClients = new Dictionary<Guid, ClientInfo>();
         private ISet<Guid> ignoredServer = new HashSet<Guid>();
+
 
         private bool checkServer;
         private Thread checkServerThread;
@@ -65,35 +68,38 @@ namespace ProxyService
 
         private ServerInfo nextServer()
         {
-            KeyValuePair<Guid, ServerInfo> bestServer = registeredServer.Single(x => x.Value.cpuUsagePercent == registeredServer.Min(y => y.Value.cpuUsagePercent));
-            return bestServer.Value;
-            /*
-            foreach (var entry in this.registeredServer)
-            {
-                //TODO Take best Server
-                return entry.Value;
-            }
-            return null;
-             * */
+            KeyValuePair<Guid, ServerSession> bestServer = registeredServer.Single(x=> x.Value.infoList.Last().cpuUsagePercent == registeredServer.Min(y => y.Value.infoList.Last().cpuUsagePercent));
+            return bestServer.Value.infoList.Last();
         }
 
         private void newServer(ServerInfo info)
         {
-            registeredServer[info.id] = info;
+            if(ignoredServer.Contains(info.id)) return;
+
+            if(!registeredServer.ContainsKey(info.id)) registeredServer[info.id] = new ServerSession { id = info.id, status = ServerStatus.Online };
+            if(registeredServer[info.id].infoList.Count > SERVER_SESSION_INFO_CAPACITY) registeredServer[info.id].infoList.RemoveAt(0);
+
+            registeredServer[info.id].infoList.Add(info);
+
 
             Console.WriteLine("New Server " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName + ", " + info.cpuUsagePercent + ", " + info.memoryUsagePercent);
         }
 
         private void checkServerIsAvailable()
         {
-            uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-
-            foreach (var server in lastServerUpdate)
+            while (checkServer)
             {
-                if ((aktTimestamp - server.Value) > SERVER_FAIL_TIME)
+                uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+
+                foreach (var server in lastServerUpdate)
                 {
-                    registeredServer.Remove(server.Key);
+                    if ((aktTimestamp - server.Value) > SERVER_FAIL_TIME)
+                    {
+                        registeredServer.Remove(server.Key);
+                    }
                 }
+
+                Thread.Sleep(1000);
             }
         }
 
@@ -127,10 +133,10 @@ namespace ProxyService
 
         public ServerInfo getServerById(Guid id)
         {
-            return registeredServer[id];
+            return registeredServer[id].infoList.Last();
         }
 
-        public IDictionary<Guid, ServerInfo> getServerList()
+        public IDictionary<Guid, ServerSession> getServerList()
         {
             return this.registeredServer;
         }

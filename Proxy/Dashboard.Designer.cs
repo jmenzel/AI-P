@@ -32,6 +32,7 @@
             this.lb_serverList = new System.Windows.Forms.ListBox();
             this.gb_serverDetail = new System.Windows.Forms.GroupBox();
             this.ta_serverInfo = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gb_serverList.SuspendLayout();
             this.gb_serverDetail.SuspendLayout();
             this.SuspendLayout();
@@ -41,7 +42,7 @@
             this.gb_serverList.Controls.Add(this.lb_serverList);
             this.gb_serverList.Location = new System.Drawing.Point(12, 12);
             this.gb_serverList.Name = "gb_serverList";
-            this.gb_serverList.Size = new System.Drawing.Size(200, 237);
+            this.gb_serverList.Size = new System.Drawing.Size(221, 237);
             this.gb_serverList.TabIndex = 0;
             this.gb_serverList.TabStop = false;
             this.gb_serverList.Text = "Server";
@@ -51,16 +52,17 @@
             this.lb_serverList.FormattingEnabled = true;
             this.lb_serverList.Location = new System.Drawing.Point(6, 19);
             this.lb_serverList.Name = "lb_serverList";
-            this.lb_serverList.Size = new System.Drawing.Size(188, 212);
+            this.lb_serverList.Size = new System.Drawing.Size(209, 212);
             this.lb_serverList.TabIndex = 0;
             this.lb_serverList.SelectedIndexChanged += new System.EventHandler(this.lb_serverList_SelectedIndexChanged);
             // 
             // gb_serverDetail
             // 
+            this.gb_serverDetail.Controls.Add(this.button1);
             this.gb_serverDetail.Controls.Add(this.ta_serverInfo);
-            this.gb_serverDetail.Location = new System.Drawing.Point(227, 12);
+            this.gb_serverDetail.Location = new System.Drawing.Point(239, 12);
             this.gb_serverDetail.Name = "gb_serverDetail";
-            this.gb_serverDetail.Size = new System.Drawing.Size(433, 237);
+            this.gb_serverDetail.Size = new System.Drawing.Size(421, 237);
             this.gb_serverDetail.TabIndex = 1;
             this.gb_serverDetail.TabStop = false;
             this.gb_serverDetail.Text = "Server:";
@@ -71,8 +73,17 @@
             this.ta_serverInfo.Location = new System.Drawing.Point(6, 19);
             this.ta_serverInfo.Multiline = true;
             this.ta_serverInfo.Name = "ta_serverInfo";
-            this.ta_serverInfo.Size = new System.Drawing.Size(421, 212);
+            this.ta_serverInfo.Size = new System.Drawing.Size(262, 212);
             this.ta_serverInfo.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(340, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
@@ -96,5 +107,6 @@
         private System.Windows.Forms.ListBox lb_serverList;
         private System.Windows.Forms.GroupBox gb_serverDetail;
         private System.Windows.Forms.TextBox ta_serverInfo;
+        private System.Windows.Forms.Button button1;
     }
 }

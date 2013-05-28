@@ -55,4 +55,20 @@ namespace ProxyLib.Services
             this.memoryUsagePercent = memoryUsagePercent;
         }
     }
+
+    [Serializable()]
+    public class ServerSession
+    {
+        public Guid id { get; set; }
+        public ServerStatus status { get; set; }
+        public IList<ServerInfo> infoList = new List<ServerInfo>();
+    }
+
+    [Serializable()]
+    public enum ServerStatus
+    {
+        NotAvailable,
+        Ignored,
+        Online
+    }
 }
