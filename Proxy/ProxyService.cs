@@ -53,11 +53,12 @@ namespace ProxyService
             checkServerThread.Interrupt();
         }
 
-        private void newClient(ClientInfo info)
+        private void newClient(ClientInfo cInfo, ServerInfo sInfo)
         {
             //Aktuelle Nachricht speichern
-            registeredClients[info.id] = info;
-            Console.WriteLine("Client " + info.id + " -> " + info.ip + ", " + info.name + ", " + info.applicationUptimeTimestamp);
+            registeredClients[cInfo.id] = cInfo;
+            registeredServer[sInfo.id].handeledClients.Add(cInfo.id);
+            Console.WriteLine("Client " + cInfo.id + " -> " + cInfo.ip + ", " + cInfo.name + ", " + cInfo.applicationUptimeTimestamp);
         }
 
         private ServerInfo nextServer()
@@ -68,7 +69,7 @@ namespace ProxyService
                                                                                                                                                       .Min(y => y.Value.infoList.Last().cpuUsagePercent))));
                 return bestServer.Value.infoList.Last();
             }
-            catch (Exception ex)
+            catch
             {
                 return new ServerInfo(Guid.Empty, "", "", "", "", 0, 0, 0);
             }
@@ -76,13 +77,27 @@ namespace ProxyService
 
         private void newServer(ServerInfo info)
         {
-            if(!registeredServer.ContainsKey(info.id)) registeredServer[info.id] = new ServerSession { id = info.id, status = ServerStatus.Online };
-            if(registeredServer[info.id].infoList.Count > SERVER_SESSION_INFO_CAPACITY) registeredServer[info.id].infoList.RemoveAt(0);
+            if (!registeredServer.ContainsKey(info.id))
+            {
+                //Check if "new Server" in list with old GUID
+                var oldS = registeredServer.Where(x => { return (x.Value.infoList.Last().ip == info.ip)
+                                                               && (x.Value.infoList.Last().servicePort == info.servicePort)
+                                                               && (x.Value.infoList.Last().name == info.name)
+                                                               && (x.Value.infoList.Last().serviceName == info.serviceName);});
+
+                foreach (KeyValuePair<Guid, ServerSession> pair in oldS.ToArray())
+                {
+                    registeredServer.Remove(pair.Key);
+                }
+
+                registeredServer[info.id] = new ServerSession { id = info.id, status = ServerStatus.Online };
+            }
+            if (registeredServer[info.id].infoList.Count > SERVER_SESSION_INFO_CAPACITY) registeredServer[info.id].infoList.RemoveAt(0);
             if (registeredServer[info.id].status == ServerStatus.NotAvailable) registeredServer[info.id].status = ServerStatus.Online;
             registeredServer[info.id].infoList.Add(info);
             registeredServer[info.id].lastReceivedTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
 
-            //TODO Check if "new Server" in list with old GUID
+            
 
             Console.WriteLine("Server " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName + ", " + info.cpuUsagePercent + ", " + info.memoryUsagePercent);
         }

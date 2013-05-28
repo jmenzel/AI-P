@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ProxyLib.Services
 {
     public delegate ServerInfo GetServer();
-    public delegate void RegisterClient(ClientInfo info);
+    public delegate void RegisterClient(ClientInfo cInfo, ServerInfo sInfo);
     public delegate int RegisteredServerCount();
 
     public delegate void RegisterServer(ServerInfo info);
@@ -63,6 +63,7 @@ namespace ProxyLib.Services
         public ServerStatus status { get; set; }
         public IList<ServerInfo> infoList = new List<ServerInfo>();
         public uint lastReceivedTimestamp { get; set; }
+        public ISet<Guid> handeledClients = new HashSet<Guid>();
     }
 
     [Serializable()]

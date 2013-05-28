@@ -20,7 +20,8 @@ namespace HES.Fassade
         private int proxyPort = 9000;
         private string proxyIp = "localhost";
 
-        private int HESPort = 4820;
+        private int HESPort;
+        private string HESName;
 
         private ServerInfo info = null;
 
@@ -29,8 +30,11 @@ namespace HES.Fassade
         private Thread updateThread;
         private bool sendUpdate;
 
-        public ClientConnector()
+        public ClientConnector(string server_name, int port)
         {
+            this.HESName = server_name;
+            this.HESPort = port;
+
             cpuCounter = new PerformanceCounter();
 
             cpuCounter.CategoryName = "Processor";
@@ -42,7 +46,7 @@ namespace HES.Fassade
             getCurrentCpuUsage();
             getAvailableRAM();
 
-            info = new ServerInfo(Guid.NewGuid(), "HES Server", System.Net.Dns.GetHostName(), HESPort.ToString(), "Service", ((uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds), getCurrentCpuUsage(), getAvailableRAM());
+            info = new ServerInfo(Guid.NewGuid(), this.HESName, System.Net.Dns.GetHostName(), this.HESPort.ToString(), "Service", ((uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds), getCurrentCpuUsage(), getAvailableRAM());
 
             RegisterProxyChannel();
             RegisterClientChannel();
@@ -62,8 +66,8 @@ namespace HES.Fassade
         private void RegisterClientChannel()
         {
             Hashtable ht = new Hashtable();
-            ht["name"] = "ClientChannel";
-            ht["port"] = 4820;
+            ht["name"] = "ClientChannel"+this.HESName;
+            ht["port"] = this.HESPort;
 
             TcpChannel channel = new TcpChannel(ht, null, null);
             ChannelServices.RegisterChannel(channel, true);
@@ -76,7 +80,11 @@ namespace HES.Fassade
 
         private void RegisterProxyChannel()
         {
-            TcpChannel channel = new TcpChannel(9003);
+            Hashtable ht = new Hashtable();
+            ht["name"] = "ProxyChannel" + this.HESName;
+            ht["port"] = this.HESPort+1000;
+
+            TcpChannel channel = new TcpChannel(ht, null, null);
             ChannelServices.RegisterChannel(channel, false);
 
             object obj = Activator.GetObject(typeof(IProxyServer), "tcp://"+proxyIp+":"+proxyPort+"/ProxyServerService");

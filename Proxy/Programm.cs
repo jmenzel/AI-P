@@ -20,6 +20,7 @@ namespace ProxyService
             Application.Run(new Dashboard(p));
 
             Console.ReadKey();
+            Environment.Exit(0);
         }
     }
 }

@@ -14,6 +14,8 @@ namespace Proxy
 {
     partial class Dashboard : Form
     {
+        const uint CHART_LIMIT = 20;
+
         private ProxyService.ProxyService proxy;
         private bool doUpdate;
         private Thread updateThread;
@@ -80,12 +82,15 @@ namespace Proxy
             s += "GUID = " + info.id + Environment.NewLine;
             s += "Name = " + info.name + Environment.NewLine;
             s += "Host = " + info.ip + Environment.NewLine;
+            s += "ServiceName = " + info.serviceName + Environment.NewLine;
+            s += "ServicePort = " + info.servicePort + Environment.NewLine;
+            s += "Handled Clients = " + session.handeledClients.Count() + Environment.NewLine;
 
             if (session.status != ServerStatus.NotAvailable)
             {
                 s += "App Uptime = " + (aktTimestamp - info.serverUptimeTimestamp) + " Seconds" + Environment.NewLine;
-                s += "CPU % = " + info.cpuUsagePercent + Environment.NewLine;
-                s += "RAM free MB = " + info.memoryUsagePercent + Environment.NewLine;
+                s += "CPU = " + info.cpuUsagePercent + " %" + Environment.NewLine;
+                s += "Free RAM = " + info.memoryUsagePercent + " MB" + Environment.NewLine;
             }
 
             this.ta_serverInfo.Text = s;
@@ -106,6 +111,14 @@ namespace Proxy
                     break;
                 default:
                     break;
+            }
+
+            foreach (ServerInfo value in session.infoList)
+            {
+                chartCpu.Series.Clear();
+                chartMem.Series.Clear();
+
+                //TODO werte in CHart einfügen
             }
         }
 

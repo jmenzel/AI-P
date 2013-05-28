@@ -34,12 +34,13 @@ namespace ProxyLib
         public T getServiceHost<T>(ClientInfo info)
         {
             if (serverCount() == 0) return default(T);
-
-            //Client eintragen / aktualisieren
-            ProxyToClient.registerClient(info);
-
             //Besten/Nächsten bekannten Server ermitteln
             ServerInfo server = ProxyToClient.getNextServer();
+
+
+            //Client eintragen / aktualisieren
+            ProxyToClient.registerClient(info, server);
+
 
             //ChannelSettings für Client & Server definieren
             IDictionary channelSettings = new Hashtable();
