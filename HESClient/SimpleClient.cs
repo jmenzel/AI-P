@@ -10,6 +10,7 @@ using System.Linq;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HESClient
@@ -29,11 +30,17 @@ namespace HESClient
             TcpChannel channel = new TcpChannel();
             ChannelServices.RegisterChannel(channel, true);
 
+
+
             proxy = (IProxyClient)Activator.GetObject(typeof(IProxyClient), location);
 
             try
             {
-                Console.WriteLine("Try to get IService instance");
+                while (!proxy.anyServerAvailable())
+                {
+                    Console.WriteLine("Try to get IService instance");
+                    Thread.Sleep(1000);
+                }
                 IHes = proxy.getServiceHost<IHes>(info);
                 Console.WriteLine("Got it!");
 

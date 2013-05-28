@@ -21,9 +21,7 @@ namespace ProxyService
 
 
         private IDictionary<Guid, ServerSession> registeredServer = new Dictionary<Guid, ServerSession>();
-        private IDictionary<Guid, uint> lastServerUpdate = new Dictionary<Guid, uint>();
         private IDictionary<Guid, ClientInfo> registeredClients = new Dictionary<Guid, ClientInfo>();
-        private ISet<Guid> ignoredServer = new HashSet<Guid>();
 
 
         private bool checkServer;
@@ -59,30 +57,34 @@ namespace ProxyService
         {
             //Aktuelle Nachricht speichern
             registeredClients[info.id] = info;
-
-            //Timestamp der letzten Nachricht speichern
-            lastServerUpdate[info.id] = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-
-            Console.WriteLine("New Client " + info.id + " -> " + info.ip + ", " + info.name + ", " + info.applicationUptimeTimestamp);
+            Console.WriteLine("Client " + info.id + " -> " + info.ip + ", " + info.name + ", " + info.applicationUptimeTimestamp);
         }
 
         private ServerInfo nextServer()
         {
-            KeyValuePair<Guid, ServerSession> bestServer = registeredServer.Single(x=> x.Value.infoList.Last().cpuUsagePercent == registeredServer.Min(y => y.Value.infoList.Last().cpuUsagePercent));
-            return bestServer.Value.infoList.Last();
+            try
+            {
+                KeyValuePair<Guid, ServerSession> bestServer = registeredServer.Single((x => (x.Value.infoList.Last().cpuUsagePercent == registeredServer.Where(a => a.Value.status == ServerStatus.Online)
+                                                                                                                                                      .Min(y => y.Value.infoList.Last().cpuUsagePercent))));
+                return bestServer.Value.infoList.Last();
+            }
+            catch (Exception ex)
+            {
+                return new ServerInfo(Guid.Empty, "", "", "", "", 0, 0, 0);
+            }
         }
 
         private void newServer(ServerInfo info)
         {
-            if(ignoredServer.Contains(info.id)) return;
-
             if(!registeredServer.ContainsKey(info.id)) registeredServer[info.id] = new ServerSession { id = info.id, status = ServerStatus.Online };
             if(registeredServer[info.id].infoList.Count > SERVER_SESSION_INFO_CAPACITY) registeredServer[info.id].infoList.RemoveAt(0);
-
+            if (registeredServer[info.id].status == ServerStatus.NotAvailable) registeredServer[info.id].status = ServerStatus.Online;
             registeredServer[info.id].infoList.Add(info);
+            registeredServer[info.id].lastReceivedTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
 
+            //TODO Check if "new Server" in list with old GUID
 
-            Console.WriteLine("New Server " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName + ", " + info.cpuUsagePercent + ", " + info.memoryUsagePercent);
+            Console.WriteLine("Server " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName + ", " + info.cpuUsagePercent + ", " + info.memoryUsagePercent);
         }
 
         private void checkServerIsAvailable()
@@ -91,11 +93,12 @@ namespace ProxyService
             {
                 uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
 
-                foreach (var server in lastServerUpdate)
+                foreach (var server in registeredServer)
                 {
-                    if ((aktTimestamp - server.Value) > SERVER_FAIL_TIME)
+                    if ((aktTimestamp - server.Value.lastReceivedTimestamp) > SERVER_FAIL_TIME)
                     {
-                        registeredServer.Remove(server.Key);
+                        //registeredServer.Remove(server.Key);
+                        registeredServer[server.Key].status = ServerStatus.NotAvailable;
                     }
                 }
 
@@ -131,9 +134,9 @@ namespace ProxyService
             RemotingConfiguration.RegisterWellKnownServiceType(typeof(ProxyToClient), serviceName, WellKnownObjectMode.Singleton);
         }
 
-        public ServerInfo getServerById(Guid id)
+        public ServerSession getServerById(Guid id)
         {
-            return registeredServer[id].infoList.Last();
+            return registeredServer[id];//.infoList.Last();
         }
 
         public IDictionary<Guid, ServerSession> getServerList()
@@ -141,14 +144,14 @@ namespace ProxyService
             return this.registeredServer;
         }
 
-        public void addServerToIgnoreList(Guid serverId)
+        public void ignoreServer(Guid serverId)
         {
-            this.ignoredServer.Add(serverId);
+            this.registeredServer[serverId].status = ServerStatus.Ignored;
         }
 
-        public void removeServerFromIgnoreList(Guid serverId)
+        public void activateServer(Guid serverId)
         {
-            this.ignoredServer.Remove(serverId);
+            this.registeredServer[serverId].status = ServerStatus.Online;
         }
     }
 }

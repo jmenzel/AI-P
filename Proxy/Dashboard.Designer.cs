@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.gb_serverList = new System.Windows.Forms.GroupBox();
-            this.lb_serverList = new System.Windows.Forms.ListBox();
+            this.lv_serverList = new System.Windows.Forms.ListView();
             this.gb_serverDetail = new System.Windows.Forms.GroupBox();
+            this.b_serverStatus = new System.Windows.Forms.Button();
             this.ta_serverInfo = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.gb_serverList.SuspendLayout();
             this.gb_serverDetail.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_serverList
             // 
-            this.gb_serverList.Controls.Add(this.lb_serverList);
+            this.gb_serverList.Controls.Add(this.lv_serverList);
             this.gb_serverList.Location = new System.Drawing.Point(12, 12);
             this.gb_serverList.Name = "gb_serverList";
             this.gb_serverList.Size = new System.Drawing.Size(221, 237);
@@ -47,18 +47,20 @@
             this.gb_serverList.TabStop = false;
             this.gb_serverList.Text = "Server";
             // 
-            // lb_serverList
+            // lv_serverList
             // 
-            this.lb_serverList.FormattingEnabled = true;
-            this.lb_serverList.Location = new System.Drawing.Point(6, 19);
-            this.lb_serverList.Name = "lb_serverList";
-            this.lb_serverList.Size = new System.Drawing.Size(209, 212);
-            this.lb_serverList.TabIndex = 0;
-            this.lb_serverList.SelectedIndexChanged += new System.EventHandler(this.lb_serverList_SelectedIndexChanged);
+            this.lv_serverList.Location = new System.Drawing.Point(6, 19);
+            this.lv_serverList.MultiSelect = false;
+            this.lv_serverList.Name = "lv_serverList";
+            this.lv_serverList.Size = new System.Drawing.Size(209, 212);
+            this.lv_serverList.TabIndex = 2;
+            this.lv_serverList.UseCompatibleStateImageBehavior = false;
+            this.lv_serverList.View = System.Windows.Forms.View.List;
+            this.lv_serverList.SelectedIndexChanged += new System.EventHandler(this.lv_serverList_SelectedIndexChanged);
             // 
             // gb_serverDetail
             // 
-            this.gb_serverDetail.Controls.Add(this.button1);
+            this.gb_serverDetail.Controls.Add(this.b_serverStatus);
             this.gb_serverDetail.Controls.Add(this.ta_serverInfo);
             this.gb_serverDetail.Location = new System.Drawing.Point(239, 12);
             this.gb_serverDetail.Name = "gb_serverDetail";
@@ -68,6 +70,15 @@
             this.gb_serverDetail.Text = "Server:";
             this.gb_serverDetail.Visible = false;
             // 
+            // b_serverStatus
+            // 
+            this.b_serverStatus.Location = new System.Drawing.Point(340, 19);
+            this.b_serverStatus.Name = "b_serverStatus";
+            this.b_serverStatus.Size = new System.Drawing.Size(75, 23);
+            this.b_serverStatus.TabIndex = 1;
+            this.b_serverStatus.UseVisualStyleBackColor = true;
+            this.b_serverStatus.Click += new System.EventHandler(this.b_serverStatus_Click);
+            // 
             // ta_serverInfo
             // 
             this.ta_serverInfo.Location = new System.Drawing.Point(6, 19);
@@ -75,15 +86,6 @@
             this.ta_serverInfo.Name = "ta_serverInfo";
             this.ta_serverInfo.Size = new System.Drawing.Size(262, 212);
             this.ta_serverInfo.TabIndex = 0;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(340, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 
@@ -104,9 +106,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gb_serverList;
-        private System.Windows.Forms.ListBox lb_serverList;
         private System.Windows.Forms.GroupBox gb_serverDetail;
         private System.Windows.Forms.TextBox ta_serverInfo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button b_serverStatus;
+        private System.Windows.Forms.ListView lv_serverList;
     }
 }
