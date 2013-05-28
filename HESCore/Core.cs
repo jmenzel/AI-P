@@ -13,19 +13,22 @@ using NHibernate;
 using HES.TransportComp;
 using HES.AuftragserfassungComp;
 using RechnungComp;
+using HES.Fassade;
 
 namespace HES.Core
 {
     public class Core
     {
-        ISessionFactory db;
+        private ISessionFactory db;
 
-        //IKunde kunde;
-        ILager lager;
-        ITransport transport;
-        IAuftragserfassung auftragserfassung;
-        IKunde kunden;
-        IRechnung rechnung;
+        private ILager lager;
+        private ITransport transport;
+        private IAuftragserfassung auftragserfassung;
+        private IKunde kunden;
+        private IRechnung rechnung;
+
+        private ClientConnector connector;
+
 
         public Core()
         {
@@ -39,6 +42,12 @@ namespace HES.Core
             rechnung = RechnungKomp.getRechnungKomp(db);
             #endregion
 
+            #region Fassade erstellen
+            Fassade.Fassade.hesCore = this;
+            connector = new ClientConnector();
+            #endregion
+
+            /*
             #region Komponenten initialisieren
             
             var prodLaptop = lager.erstelleProdukt(new ProduktDetailsTyp("Laptop X750"));
@@ -111,6 +120,32 @@ namespace HES.Core
             Console.WriteLine("\nRechnung erstellt:\n" + rechnung.getRechnung(rechnung_1));
 
             #endregion
+             * */
+        }
+
+        public ILager getLagerComp()
+        {
+            return lager;
+        }
+
+        public ITransport getTransportComp()
+        {
+            return transport;
+        }
+
+        public IAuftragserfassung getAuftragserfassungComp()
+        {
+            return auftragserfassung;
+        }
+
+        public IKunde getKundeComp()
+        {
+            return kunden;
+        }
+
+        public IRechnung getRechnungComp()
+        {
+            return rechnung;
         }
     }
 }

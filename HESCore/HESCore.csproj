@@ -50,6 +50,7 @@
     <Reference Include="System.Data.SQLite.Linq">
       <HintPath>..\packages\System.Data.SQLite.1.0.84.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -58,6 +59,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
+    <Compile Include="Fassade\ClientConnector.cs" />
+    <Compile Include="Fassade\Fassade.cs" />
     <Compile Include="Mappings\AngebotMap.cs" />
     <Compile Include="Mappings\AuftragMap.cs" />
     <Compile Include="Mappings\KundeMap.cs" />
@@ -78,6 +81,10 @@
       <Project>{48cd264d-79fb-48e1-9f39-554177e811ce}</Project>
       <Name>EinkaufComp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HESLib\HESLib.csproj">
+      <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
+      <Name>HESLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Kunde\KundeComp.csproj">
       <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>
       <Name>KundeComp</Name>
@@ -85,6 +92,10 @@
     <ProjectReference Include="..\LagerComp\LagerComp.csproj">
       <Project>{7b019172-ddf9-45e6-9a72-1181772da7ef}</Project>
       <Name>LagerComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProxyLib\ProxyLib.csproj">
+      <Project>{94e27e0f-874e-4e26-833f-0115bdbc3d09}</Project>
+      <Name>ProxyLib</Name>
     </ProjectReference>
     <ProjectReference Include="..\RechnungComp\RechnungComp.csproj">
       <Project>{69390045-dde8-49d8-aaea-c06243d5eec0}</Project>

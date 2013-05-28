@@ -53,19 +53,22 @@
     <Compile Include="Logic\Lager.cs" />
     <Compile Include="Produkt\IProdukt.cs" />
     <Compile Include="Produkt\Repository\Entity\ProduktDetails.cs" />
-    <Compile Include="Produkt\Repository\Entity\ProduktDetailsTyp.cs" />
-    <Compile Include="Produkt\Repository\Entity\ProduktNummerTyp.cs" />
     <Compile Include="Produkt\Repository\ICompProdukt.cs" />
     <Compile Include="Produkt\Repository\ProduktRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\Entity\MeldungsDetailsTyp.cs" />
-    <Compile Include="Repository\Entity\MeldungsNummerTyp.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Produkt\Logic\" />
+    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HESLib\HESLib.csproj">
+      <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
+      <Name>HESLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

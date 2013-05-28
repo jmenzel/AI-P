@@ -52,10 +52,6 @@
     <Compile Include="Logic\Transportauftrag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ITransport.cs" />
-    <Compile Include="Repository\Entity\LieferdetailsTyp.cs" />
-    <Compile Include="Repository\Entity\LiefernummerTyp.cs" />
-    <Compile Include="Repository\Entity\TransportauftragNrTyp.cs" />
-    <Compile Include="Repository\Entity\TransportauftragTyp.cs" />
     <Compile Include="Repository\TransportRepo.cs" />
     <Compile Include="TransportKomp.cs" />
   </ItemGroup>
@@ -66,6 +62,10 @@
     <ProjectReference Include="..\AuftragserfassungComp\AuftragserfassungComp.csproj">
       <Project>{fd178803-d4dc-4400-962f-b140f5e796c7}</Project>
       <Name>AuftragserfassungComp</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HESLib\HESLib.csproj">
+      <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
+      <Name>HESLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

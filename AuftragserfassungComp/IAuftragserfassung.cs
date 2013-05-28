@@ -15,9 +15,9 @@ namespace HES.AuftragserfassungComp
     /// </summary>
     public interface IAuftragserfassung
     {
-        AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kundeNr,IDictionary<ProduktNummerTyp,int> produktListe);
+        AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kundeNr, IDictionary<ProduktNummerTyp, int> produktListe);
         AngebotTyp holeAngebot(AngebotNrTyp nr);
-        AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr,bool istAbgeschlossen, DateTime erstelltAm);
+        AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr, bool istAbgeschlossen, DateTime erstelltAm);
         AuftragTyp holeAuftrag(AuftragNrTyp auftragNr);
         void markiereAuftrag(AuftragNrTyp auftrag, AuftragStatusTyp status);
     }
