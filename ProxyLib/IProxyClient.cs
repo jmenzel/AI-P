@@ -10,5 +10,6 @@ namespace ProxyLib
     public interface IProxyClient
     {
          T getServiceHost<T>(ClientInfo info);
+         bool anyServerAvailable();
     }
 }

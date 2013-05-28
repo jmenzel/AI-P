@@ -62,6 +62,7 @@ namespace ProxyLib.Services
         public Guid id { get; set; }
         public ServerStatus status { get; set; }
         public IList<ServerInfo> infoList = new List<ServerInfo>();
+        public uint lastReceivedTimestamp { get; set; }
     }
 
     [Serializable()]

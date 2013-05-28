@@ -17,6 +17,7 @@ namespace Proxy
         private ProxyService.ProxyService proxy;
         private bool doUpdate;
         private Thread updateThread;
+        private Guid lastSelected;
 
         public Dashboard(ProxyService.ProxyService p)
         {
@@ -28,40 +29,84 @@ namespace Proxy
             this.updateThread.Start();
         }
 
+        ~Dashboard()
+        {
+            this.doUpdate = false;
+            this.updateThread.Interrupt();
+            //TODO CHeck exception beim breakup
+            Environment.Exit(0);
+        }
+
         private void fillServerList()
         {
-            if (lb_serverList.InvokeRequired) lb_serverList.Invoke((Action)(() => { fillServerList(); }));
+            if (lv_serverList.InvokeRequired) lv_serverList.Invoke((Action)(() => { fillServerList(); }));
             else
             {
-                object selected = lb_serverList.SelectedItem;
+                int selected = -1;
+                if(lv_serverList.SelectedItems.Count > 0 ) selected = lv_serverList.SelectedIndices[0];
 
-                lb_serverList.Items.Clear();
+                lv_serverList.Items.Clear();
                 foreach (var server in proxy.getServerList())
                 {
-                    this.lb_serverList.Items.Add(server.Key);
+                    this.lv_serverList.Items.Add(server.Key.ToString());
+
+                    switch (server.Value.status)
+                    {
+                        case ServerStatus.Online: 
+                            lv_serverList.FindItemWithText(server.Value.id.ToString()).BackColor = Color.LightGreen;
+                            break;
+                        case ServerStatus.Ignored:
+                            lv_serverList.FindItemWithText(server.Value.id.ToString()).BackColor = Color.Yellow;
+                            break;
+                        case ServerStatus.NotAvailable:
+                            lv_serverList.FindItemWithText(server.Value.id.ToString()).BackColor = Color.LightCoral;
+                            break;
+                        default:
+                            break;
+                    }
                 }
 
-                lb_serverList.SelectedItem = selected;
+                if (selected != -1) lv_serverList.Items[selected].Selected = true;
+
             }
         }
 
-        private void lb_serverList_SelectedIndexChanged(object sender, EventArgs e)
+        private void setServerDetails(ServerSession session)
         {
-            setServerDetails(proxy.getServerById((Guid)lb_serverList.SelectedItem));
-            gb_serverDetail.Visible = true;
-        }
-
-        private void setServerDetails(ServerInfo info)
-        {
+            ServerInfo info = session.infoList.Last();
             string s = "";
+            uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
 
             s += "GUID = " + info.id + Environment.NewLine;
             s += "Name = " + info.name + Environment.NewLine;
             s += "Host = " + info.ip + Environment.NewLine;
-            s += "CPU % = " + info.cpuUsagePercent + Environment.NewLine;
-            s += "RAM free MB = " + info.memoryUsagePercent + Environment.NewLine;
+
+            if (session.status != ServerStatus.NotAvailable)
+            {
+                s += "App Uptime = " + (aktTimestamp - info.serverUptimeTimestamp) + " Seconds" + Environment.NewLine;
+                s += "CPU % = " + info.cpuUsagePercent + Environment.NewLine;
+                s += "RAM free MB = " + info.memoryUsagePercent + Environment.NewLine;
+            }
 
             this.ta_serverInfo.Text = s;
+
+            switch (session.status)
+            {
+                case ServerStatus.Online:
+                    b_serverStatus.Text = "Ignore";
+                    b_serverStatus.Enabled = true;
+                    break;
+                case ServerStatus.Ignored:
+                    b_serverStatus.Text = "Activate";
+                    b_serverStatus.Enabled = true;
+                    break;
+                case ServerStatus.NotAvailable:
+                    b_serverStatus.Text = "Unavailable";
+                    b_serverStatus.Enabled = false;
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void updateServerList()
@@ -70,6 +115,33 @@ namespace Proxy
             {
                 this.fillServerList();
                 Thread.Sleep(1000);
+            }
+        }
+
+        private void lv_serverList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lv_serverList.SelectedItems.Count == 0) return;
+            lastSelected = Guid.Parse(lv_serverList.SelectedItems[0].Text);
+            setServerDetails(proxy.getServerById(lastSelected));
+            gb_serverDetail.Visible = true;
+        }
+
+        private void b_serverStatus_Click(object sender, EventArgs e)
+        {
+            switch (b_serverStatus.Text.ToLower())
+            {
+                case "ignore":
+                    b_serverStatus.Enabled = false;
+                    proxy.ignoreServer(lastSelected);
+                    lv_serverList.FindItemWithText(lastSelected.ToString()).Selected = true;
+                    break;
+                case "activate":
+                    b_serverStatus.Enabled = false;
+                    proxy.activateServer(lastSelected);
+                    lv_serverList.FindItemWithText(lastSelected.ToString()).Selected = true;
+                    break;
+                default:
+                    break;
             }
         }
     }

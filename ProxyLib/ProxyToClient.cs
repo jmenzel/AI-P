@@ -26,6 +26,11 @@ namespace ProxyLib
             return "tcp://" + info.ip + ":" + info.servicePort + "/" + info.serviceName;
         }
 
+        public bool anyServerAvailable()
+        {
+            return ProxyToClient.getNextServer().id != Guid.Empty;
+        }
+
         public T getServiceHost<T>(ClientInfo info)
         {
             if (serverCount() == 0) return default(T);
