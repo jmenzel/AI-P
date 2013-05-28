@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
+    [Serializable()]
     public class AngebotTyp
     {
          public virtual int ID { get; protected set; }

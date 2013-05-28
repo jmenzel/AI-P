@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.TransportComp.Repository.Entity
 {
+    [Serializable()]
     public class LiefernummerTyp
     {
         public virtual String nr { get; protected set; }

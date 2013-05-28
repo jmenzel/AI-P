@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace HES.Lager.Repository.Entity
 {
+    [Serializable()]
     public class MeldungsNummerTyp
     {
         public virtual string mNummer { get; protected set; }

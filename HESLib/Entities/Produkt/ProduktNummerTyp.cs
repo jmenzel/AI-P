@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.Lager.Produkt.Repository.Entity
 {
+    [Serializable()]
     public class ProduktNummerTyp
     {
         public virtual string prodNr { get; protected set; }

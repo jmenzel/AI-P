@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace RechnungComp.Repository.Entity
 {
+    [Serializable()]
     public class RechnungsNrTyp
     {
         private readonly String contraction = "RB_";

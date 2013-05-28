@@ -9,6 +9,7 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HES.Fassade
@@ -25,7 +26,8 @@ namespace HES.Fassade
 
         private PerformanceCounter cpuCounter;
         private PerformanceCounter ramCounter;
-
+        private Thread updateThread;
+        private bool sendUpdate;
 
         public ClientConnector()
         {
@@ -45,7 +47,16 @@ namespace HES.Fassade
             RegisterProxyChannel();
             RegisterClientChannel();
 
-            //TODO start proxy puplish status thread
+            sendUpdate = true;
+            updateThread = new Thread(new ThreadStart(sendingServerStatus));
+            updateThread.Start();
+
+        }
+
+        ~ClientConnector()
+        {
+            sendUpdate = false;
+            updateThread.Interrupt();
         }
 
         private void RegisterClientChannel()
@@ -73,14 +84,25 @@ namespace HES.Fassade
             proxy.sendServerInfo(info);
         }
 
-        public uint getCurrentCpuUsage()
+        private uint getCurrentCpuUsage()
         {
             return (uint)cpuCounter.NextValue();
         }
 
-        public uint getAvailableRAM()
+        private uint getAvailableRAM()
         {
             return (uint)ramCounter.NextValue();
-        } 
+        }
+
+        private void sendingServerStatus()
+        {
+            while (sendUpdate)
+            {
+                System.Threading.Thread.Sleep(5000);
+                info.cpuUsagePercent = getCurrentCpuUsage();
+                info.memoryUsagePercent = getAvailableRAM();
+                proxy.sendServerInfo(info);
+            }
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace HES.Fassade
         #region Lager
         MeldungsNummerTyp erstelleWarenausgang(ProduktDetailsTyp prod, int Anzahl);
         ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod);
+        ProduktDetailsTyp getProdukt(ProduktNummerTyp prodNr);
         #endregion
 
         #region Kunde
@@ -41,6 +42,7 @@ namespace HES.Fassade
 
         #region Rechnung
         RechnungsNrTyp erstelleRechnung(AuftragTyp auftrag);
+        RechnungsTyp getRechnung(RechnungsNrTyp nr);
         #endregion
     }
 }

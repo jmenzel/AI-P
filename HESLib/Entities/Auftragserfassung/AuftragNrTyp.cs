@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
+    [Serializable()]
     public class AuftragNrTyp
     {
         

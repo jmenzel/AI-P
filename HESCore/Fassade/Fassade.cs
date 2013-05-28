@@ -73,5 +73,17 @@ namespace HES.Fassade
         {
             return hesCore.getRechnungComp().erstelleRechnung(auftrag);
         }
+
+
+        public ProduktDetailsTyp getProdukt(ProduktNummerTyp prodNr)
+        {
+            return hesCore.getLagerComp().getProdukt(prodNr);
+        }
+
+
+        public RechnungsTyp getRechnung(RechnungsNrTyp nr)
+        {
+            return hesCore.getRechnungComp().getRechnung(nr);
+        }
     }
 }

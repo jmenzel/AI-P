@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace RechnungComp.Repository.Entity
 {
+    [Serializable()]
     public class RechnungsTyp
     {
         public virtual int ID { get; protected set; }

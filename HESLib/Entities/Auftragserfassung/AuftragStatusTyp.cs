@@ -9,6 +9,7 @@ namespace HES.AuftragserfassungComp.Repository.Entity
     /// <summary>
     /// Wird erstmal nicth benutzt
     /// </summary>
+    [Serializable()]
     public enum AuftragStatusTyp
     {
 

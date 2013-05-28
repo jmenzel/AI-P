@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.Kunde.Repository.Entity
 {
+    [Serializable()]
     public class KundenNrTyp
     {
         private readonly String contraction = "KD_";

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.AuftragserfassungComp.Repository.Entity
 {
+    [Serializable()]
     public class AngebotNrTyp
     {
         private readonly String contraction = "AN_";

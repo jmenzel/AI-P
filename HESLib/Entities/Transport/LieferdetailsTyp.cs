@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace HES.TransportComp.Repository.Entity
 {
     //Wird gerade nicht verwendet!
+    [Serializable()]
     public class LieferdetailsTyp
     {
     }

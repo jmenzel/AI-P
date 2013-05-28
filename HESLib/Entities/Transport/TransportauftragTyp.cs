@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace HES.TransportComp.Repository.Entity
 {
+    [Serializable()]
     public class TransportauftragTyp
     {
         public virtual int ID { get; protected set; }

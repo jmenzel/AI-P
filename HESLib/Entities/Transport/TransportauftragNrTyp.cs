@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HES.TransportComp.Repository.Entity
 {
+    [Serializable()]
     public class TransportauftragNrTyp
     {
         private readonly String contraction = "TR_";

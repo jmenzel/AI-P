@@ -58,7 +58,7 @@ namespace ProxyService
         {
             registeredServer[info.id] = info;
 
-            Console.WriteLine("Server Message " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName);
+            Console.WriteLine("New Server " + info.id + " -> " + info.name + ", " + info.ip + ", " + info.servicePort + ", " + info.serviceName + ", " + info.cpuUsagePercent + ", " + info.memoryUsagePercent);
         }
 
         static void RegisterChannelToServers(string serviceName, int servicePort)
