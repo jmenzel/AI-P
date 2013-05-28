@@ -42,12 +42,16 @@ namespace ProxyService
 
         private ServerInfo nextServer()
         {
+            KeyValuePair<Guid, ServerInfo> bestServer = registeredServer.Single(x => x.Value.cpuUsagePercent == registeredServer.Min(y => y.Value.cpuUsagePercent));
+            return bestServer.Value;
+            /*
             foreach (var entry in this.registeredServer)
             {
                 //TODO Take best Server
                 return entry.Value;
             }
             return null;
+             * */
         }
 
         private void newServer(ServerInfo info)
