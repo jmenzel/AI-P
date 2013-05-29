@@ -104,20 +104,27 @@ namespace ProxyService
 
         private void checkServerIsAvailable()
         {
-            while (checkServer)
+            try
             {
-                uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
-
-                foreach (var server in registeredServer)
+                while (checkServer)
                 {
-                    if ((aktTimestamp - server.Value.lastReceivedTimestamp) > SERVER_FAIL_TIME)
-                    {
-                        //registeredServer.Remove(server.Key);
-                        registeredServer[server.Key].status = ServerStatus.NotAvailable;
-                    }
-                }
+                    uint aktTimestamp = (uint)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
 
-                Thread.Sleep(1000);
+                    foreach (var server in registeredServer)
+                    {
+                        if ((aktTimestamp - server.Value.lastReceivedTimestamp) > SERVER_FAIL_TIME)
+                        {
+                            //registeredServer.Remove(server.Key);
+                            registeredServer[server.Key].status = ServerStatus.NotAvailable;
+                        }
+                    }
+
+                    Thread.Sleep(1000);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

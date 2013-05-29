@@ -174,6 +174,7 @@
             this.Controls.Add(this.gb_serverList);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.gb_serverList.ResumeLayout(false);
             this.gb_serverDetail.ResumeLayout(false);
             this.gb_serverDetail.PerformLayout();

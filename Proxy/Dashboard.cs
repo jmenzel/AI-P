@@ -124,11 +124,16 @@ namespace Proxy
 
         private void updateServerList()
         {
-            while (doUpdate)
+            try
             {
-                this.fillServerList();
-                Thread.Sleep(1000);
+                while (doUpdate)
+                {
+                    this.fillServerList();
+                    Thread.Sleep(1000);
+                }
             }
+            catch
+            { }
         }
 
         private void lv_serverList_SelectedIndexChanged(object sender, EventArgs e)
@@ -160,6 +165,14 @@ namespace Proxy
                 default:
                     break;
             }
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            doUpdate = false;
+            updateThread.Interrupt();
+            this.Dispose(true);
+            Environment.Exit(0);
         }
     }
 }
