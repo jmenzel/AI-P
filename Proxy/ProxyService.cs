@@ -17,7 +17,7 @@ namespace ProxyService
     class ProxyService
     {
         public const short SERVER_FAIL_TIME = 20;
-        public const short SERVER_SESSION_INFO_CAPACITY = 50;
+        public const short SERVER_SESSION_INFO_CAPACITY = 25;
 
 
         private IDictionary<Guid, ServerSession> registeredServer = new Dictionary<Guid, ServerSession>();

@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.gb_serverList = new System.Windows.Forms.GroupBox();
             this.lv_serverList = new System.Windows.Forms.ListView();
             this.gb_serverDetail = new System.Windows.Forms.GroupBox();
+            this.chartCpu = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartMem = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.b_serverStatus = new System.Windows.Forms.Button();
             this.ta_serverInfo = new System.Windows.Forms.TextBox();
-            this.chartMem = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartCpu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.gb_serverList.SuspendLayout();
             this.gb_serverDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCpu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMem)).BeginInit();
             this.SuspendLayout();
             // 
             // gb_serverList
@@ -59,6 +59,8 @@
             // 
             // lv_serverList
             // 
+            this.lv_serverList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.lv_serverList.Location = new System.Drawing.Point(6, 19);
             this.lv_serverList.MultiSelect = false;
             this.lv_serverList.Name = "lv_serverList";
@@ -70,6 +72,10 @@
             // 
             // gb_serverDetail
             // 
+            this.gb_serverDetail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gb_serverDetail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gb_serverDetail.Controls.Add(this.chartCpu);
             this.gb_serverDetail.Controls.Add(this.chartMem);
             this.gb_serverDetail.Controls.Add(this.b_serverStatus);
@@ -82,26 +88,39 @@
             this.gb_serverDetail.Text = "Server:";
             this.gb_serverDetail.Visible = false;
             // 
-            // b_serverStatus
+            // chartCpu
             // 
-            this.b_serverStatus.Location = new System.Drawing.Point(459, 19);
-            this.b_serverStatus.Name = "b_serverStatus";
-            this.b_serverStatus.Size = new System.Drawing.Size(75, 23);
-            this.b_serverStatus.TabIndex = 1;
-            this.b_serverStatus.UseVisualStyleBackColor = true;
-            this.b_serverStatus.Click += new System.EventHandler(this.b_serverStatus_Click);
-            // 
-            // ta_serverInfo
-            // 
-            this.ta_serverInfo.Location = new System.Drawing.Point(6, 19);
-            this.ta_serverInfo.Multiline = true;
-            this.ta_serverInfo.Name = "ta_serverInfo";
-            this.ta_serverInfo.Size = new System.Drawing.Size(262, 295);
-            this.ta_serverInfo.TabIndex = 0;
+            this.chartCpu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.AxisX.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisX2.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisY.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisY.MaximumAutoSize = 85F;
+            chartArea1.AxisY2.LabelAutoFitMinFontSize = 5;
+            chartArea1.AxisY2.MaximumAutoSize = 85F;
+            chartArea1.Name = "cpu";
+            this.chartCpu.ChartAreas.Add(chartArea1);
+            this.chartCpu.Location = new System.Drawing.Point(274, 50);
+            this.chartCpu.Name = "chartCpu";
+            this.chartCpu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chartCpu.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            series1.ChartArea = "cpu";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = System.Drawing.Color.Crimson;
+            series1.Name = "cpu";
+            this.chartCpu.Series.Add(series1);
+            this.chartCpu.Size = new System.Drawing.Size(260, 128);
+            this.chartCpu.TabIndex = 4;
+            this.chartCpu.Text = "chart_cpu";
+            title1.Name = "cpu";
+            title1.Text = "CPU Usage (%)";
+            this.chartCpu.Titles.Add(title1);
             // 
             // chartMem
             // 
-            this.chartMem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.chartMem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             chartArea2.AxisX.LabelAutoFitMinFontSize = 5;
             chartArea2.AxisX2.LabelAutoFitMinFontSize = 5;
@@ -127,33 +146,24 @@
             title2.Text = "Free Memory (MB)";
             this.chartMem.Titles.Add(title2);
             // 
-            // chartCpu
+            // b_serverStatus
             // 
-            this.chartCpu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.AxisX.LabelAutoFitMinFontSize = 5;
-            chartArea1.AxisX2.LabelAutoFitMinFontSize = 5;
-            chartArea1.AxisY.LabelAutoFitMinFontSize = 5;
-            chartArea1.AxisY.MaximumAutoSize = 85F;
-            chartArea1.AxisY2.LabelAutoFitMinFontSize = 5;
-            chartArea1.AxisY2.MaximumAutoSize = 85F;
-            chartArea1.Name = "Memory";
-            this.chartCpu.ChartAreas.Add(chartArea1);
-            this.chartCpu.Location = new System.Drawing.Point(274, 50);
-            this.chartCpu.Name = "chartCpu";
-            this.chartCpu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            this.chartCpu.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            series1.ChartArea = "Memory";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Color = System.Drawing.Color.Crimson;
-            series1.Name = "cpu";
-            this.chartCpu.Series.Add(series1);
-            this.chartCpu.Size = new System.Drawing.Size(260, 128);
-            this.chartCpu.TabIndex = 4;
-            this.chartCpu.Text = "chart_cpu";
-            title1.Name = "cpu";
-            title1.Text = "CPU Usage (%)";
-            this.chartCpu.Titles.Add(title1);
+            this.b_serverStatus.Location = new System.Drawing.Point(459, 19);
+            this.b_serverStatus.Name = "b_serverStatus";
+            this.b_serverStatus.Size = new System.Drawing.Size(75, 23);
+            this.b_serverStatus.TabIndex = 1;
+            this.b_serverStatus.UseVisualStyleBackColor = true;
+            this.b_serverStatus.Click += new System.EventHandler(this.b_serverStatus_Click);
+            // 
+            // ta_serverInfo
+            // 
+            this.ta_serverInfo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.ta_serverInfo.Location = new System.Drawing.Point(6, 19);
+            this.ta_serverInfo.Multiline = true;
+            this.ta_serverInfo.Name = "ta_serverInfo";
+            this.ta_serverInfo.Size = new System.Drawing.Size(262, 295);
+            this.ta_serverInfo.TabIndex = 0;
             // 
             // Dashboard
             // 
@@ -167,8 +177,8 @@
             this.gb_serverList.ResumeLayout(false);
             this.gb_serverDetail.ResumeLayout(false);
             this.gb_serverDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCpu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMem)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -14,8 +14,6 @@ namespace Proxy
 {
     partial class Dashboard : Form
     {
-        const uint CHART_LIMIT = 20;
-
         private ProxyService.ProxyService proxy;
         private bool doUpdate;
         private Thread updateThread;
@@ -113,12 +111,14 @@ namespace Proxy
                     break;
             }
 
+
+            chartCpu.Series[0].Points.Clear();
+            chartMem.Series[0].Points.Clear(); 
+
             foreach (ServerInfo value in session.infoList)
             {
-                chartCpu.Series.Clear();
-                chartMem.Series.Clear();
-
-                //TODO werte in CHart einfügen
+                chartCpu.Series[0].Points.Add(value.cpuUsagePercent);
+                chartMem.Series[0].Points.Add(value.memoryUsagePercent);
             }
         }
 
@@ -133,7 +133,11 @@ namespace Proxy
 
         private void lv_serverList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (lv_serverList.SelectedItems.Count == 0) return;
+            if (lv_serverList.SelectedItems.Count == 0)
+            {
+                if (lastSelected != null) setServerDetails(proxy.getServerById(lastSelected));
+                return;
+            }
             lastSelected = Guid.Parse(lv_serverList.SelectedItems[0].Text);
             setServerDetails(proxy.getServerById(lastSelected));
             gb_serverDetail.Visible = true;

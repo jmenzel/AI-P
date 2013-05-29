@@ -106,7 +106,7 @@ namespace HES.Fassade
         {
             while (sendUpdate)
             {
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(2000);
                 info.cpuUsagePercent = getCurrentCpuUsage();
                 info.memoryUsagePercent = getAvailableRAM();
                 proxy.sendServerInfo(info);
