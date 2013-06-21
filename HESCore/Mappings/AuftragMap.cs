@@ -27,6 +27,7 @@ namespace HES.Mappings
             References(x => x.gehoertZuAngebot).Not.LazyLoad();
             Map(x => x.istAbgeschlossen);
             Map(x => x.erstelltAm);
+            Map(x => x.preis);
         }
     }
 

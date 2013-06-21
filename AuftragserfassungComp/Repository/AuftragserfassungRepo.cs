@@ -71,8 +71,9 @@ namespace HES.AuftragserfassungComp.Repository
                 //Allerdings nicht so schön weil man nicht sicher stellen kann das es auch wirklich die Max ID ist - auf jeden Fall nicht ThreadSicher!
                 var maxID = session.CreateCriteria(typeof(AuftragTyp)).SetProjection(Projections.Max("ID")).UniqueResult();
                 auftragNr = new AuftragNrTyp(maxID != null ? Convert.ToString(maxID) : "0");
+                var preis = holeAngebot(nr).gesamtPreis;
 
-                AuftragTyp auftrag = new AuftragTyp(auftragNr, nr, istAbgeschlosse, erstelltAm);
+                AuftragTyp auftrag = new AuftragTyp(auftragNr, nr, istAbgeschlosse, erstelltAm,preis);
                 session.SaveOrUpdate(auftrag);
                 transaction.Commit();
             }

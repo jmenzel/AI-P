@@ -52,7 +52,9 @@
     <Compile Include="Entities\Produkt\ProduktDetailsTyp.cs" />
     <Compile Include="Entities\Produkt\ProduktNummerTyp.cs" />
     <Compile Include="Entities\Rechnung\RechnungsNrTyp.cs" />
+    <Compile Include="Entities\Rechnung\RechnungStatus.cs" />
     <Compile Include="Entities\Rechnung\RechnungsTyp.cs" />
+    <Compile Include="Entities\Rechnung\ZahlungseingangTyp.cs" />
     <Compile Include="Entities\Transport\LieferdetailsTyp.cs" />
     <Compile Include="Entities\Transport\LiefernummerTyp.cs" />
     <Compile Include="Entities\Transport\TransportauftragNrTyp.cs" />

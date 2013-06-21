@@ -17,7 +17,16 @@ namespace HES.Mappings
             References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.IstBezahlt);
             Map(x => x.RechnungsDatum);
+            Map(x => x.status);
+            Map(x => x.preis);
             HasOne(x => x.fuerAuftrag).ForeignKey();
+            HasMany<ZahlungseingangTyp>(x => x.zahlungseingaenge)
+                .Inverse()
+                .Not.LazyLoad()
+                .AsList()
+                .Cascade.AllDeleteOrphan()
+                .KeyNullable()
+                .KeyColumn("zuRechnungsNr");
         }
     }
 

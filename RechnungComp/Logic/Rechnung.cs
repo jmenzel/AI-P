@@ -29,5 +29,33 @@ namespace RechnungComp.Logic
         {
             return rechnungRepo.getRechnung(nr);
         }
+
+
+        public bool zahlungseingangBuchen(double betrag, RechnungsNrTyp nr)
+        {
+            double preis = getRechnung(nr).preis;
+            var alleZahlungen = getZahlungseingaenge(nr);
+            Double alleBetraege = alleZahlungen.Sum(x => x.betrag);
+
+            if(preis == alleBetraege + betrag)
+                setRechnungStatus(nr, RechnungStatus.BEGLICHEN);
+            else if(alleBetraege + betrag > 0)
+                setRechnungStatus(nr, RechnungStatus.TEIL_BEGLICHEN);
+            else
+                setRechnungStatus(nr, RechnungStatus.OFFEN);
+
+            return rechnungRepo.zahlungseingangBuchen(betrag, nr);
+        }
+
+
+        public IList<ZahlungseingangTyp> getZahlungseingaenge(RechnungsNrTyp rnr)
+        {
+            return rechnungRepo.getZahlungseingaenge(rnr);
+        }
+
+        public void setRechnungStatus(RechnungsNrTyp nr, RechnungStatus status)
+        {
+            rechnungRepo.setRechnungStatus(nr, status);
+        }
     }
 }

@@ -32,6 +32,7 @@ namespace HES.AuftragserfassungComp.Logic
 
         public AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr,bool istAbgeschlosse, DateTime erstelltAm)
         {
+
             return repo.erstelleAuftrag(nr,istAbgeschlosse,erstelltAm);
         }
 

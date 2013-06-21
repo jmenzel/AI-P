@@ -14,13 +14,15 @@ namespace HES.AuftragserfassungComp.Repository.Entity
         public virtual AngebotNrTyp gehoertZuAngebot { get; protected set; }
         public virtual Boolean istAbgeschlossen { get; protected set; }
         public virtual DateTime erstelltAm { get; protected set; }
+        public virtual double preis { get; protected set; }
 
-        public AuftragTyp(AuftragNrTyp nr, AngebotNrTyp angebot, bool istAbgeschlossen, DateTime erstelltAm)
+        public AuftragTyp(AuftragNrTyp nr, AngebotNrTyp angebot, bool istAbgeschlossen, DateTime erstelltAm, double preis)
         {
             this.nr = nr;
             this.gehoertZuAngebot = angebot;
             this.istAbgeschlossen = istAbgeschlossen;
             this.erstelltAm = erstelltAm;
+            this.preis = preis;
         }
 
         protected AuftragTyp() { }
