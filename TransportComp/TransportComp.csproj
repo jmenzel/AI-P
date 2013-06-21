@@ -63,6 +63,10 @@
       <Project>{fd178803-d4dc-4400-962f-b140f5e796c7}</Project>
       <Name>AuftragserfassungComp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HESCommunicationLib\HESCommunicationLib.csproj">
+      <Project>{f016ca3a-6a73-4502-894e-a0e35d4402b3}</Project>
+      <Name>HESCommunicationLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HESLib\HESLib.csproj">
       <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
       <Name>HESLib</Name>

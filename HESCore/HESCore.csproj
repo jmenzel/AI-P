@@ -84,6 +84,10 @@
       <Project>{48cd264d-79fb-48e1-9f39-554177e811ce}</Project>
       <Name>EinkaufComp</Name>
     </ProjectReference>
+    <ProjectReference Include="..\HESCommunicationLib\HESCommunicationLib.csproj">
+      <Project>{f016ca3a-6a73-4502-894e-a0e35d4402b3}</Project>
+      <Name>HESCommunicationLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\HESLib\HESLib.csproj">
       <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
       <Name>HESLib</Name>

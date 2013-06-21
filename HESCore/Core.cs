@@ -14,6 +14,7 @@ using HES.TransportComp;
 using HES.AuftragserfassungComp;
 using RechnungComp;
 using HES.Fassade;
+using HESCommunicationLib;
 
 namespace HES.Core
 {
@@ -38,7 +39,13 @@ namespace HES.Core
             lager = LagerComp.getLagerComp(db);
             kunden = KundenKomp.getKundenComp(db);
             auftragserfassung = AuftragserfassungKomp.getAuftragskomponenteComp(db);
-            transport = TransportKomp.getTransportKomp(db);
+
+            //TDL Connector init
+            var tdl = new TDLConnector();
+            transport = TransportKomp.getTransportKomp(db, tdl);
+
+            //
+
             rechnung = RechnungKomp.getRechnungKomp(db);
             #endregion
 

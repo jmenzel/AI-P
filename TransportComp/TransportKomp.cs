@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NHibernate;
+using HESCommunicationLib;
 
 namespace HES.TransportComp
 {
@@ -16,10 +17,11 @@ namespace HES.TransportComp
             return TransportKomp.db;
         }
 
-        public static ITransport getTransportKomp(ISessionFactory db)
+        //public static ITransport getTransportKomp(ISessionFactory db)
+        public static ITransport getTransportKomp(ISessionFactory db, TDLConnector tdl)
         {
            TransportKomp.db = db;
-           return new Logic.Transportauftrag();
+           return new Logic.Transportauftrag(tdl);
         }
 
              
