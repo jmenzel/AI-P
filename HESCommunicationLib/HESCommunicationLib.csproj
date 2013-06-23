@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RabbitMQ.Client">
+      <HintPath>..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,6 +51,13 @@
       <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
       <Name>HESLib</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RechnungComp\RechnungComp.csproj">
+      <Project>{69390045-dde8-49d8-aaea-c06243d5eec0}</Project>
+      <Name>RechnungComp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

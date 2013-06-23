@@ -31,18 +31,20 @@ namespace RechnungComp.Logic
         }
 
 
-        public bool zahlungseingangBuchen(double betrag, RechnungsNrTyp nr)
+        public bool zahlungseingangBuchen(double betrag, String nr)
         {
-            double preis = getRechnung(nr).preis;
-            var alleZahlungen = getZahlungseingaenge(nr);
+            RechnungsNrTyp rnr = new RechnungsNrTyp(nr);
+
+            double preis = getRechnung(rnr).preis;
+            var alleZahlungen = getZahlungseingaenge(rnr);
             Double alleBetraege = alleZahlungen.Sum(x => x.betrag);
 
             if(preis == alleBetraege + betrag)
-                setRechnungStatus(nr, RechnungStatus.BEGLICHEN);
+                setRechnungStatus(rnr, RechnungStatus.BEGLICHEN);
             else if(alleBetraege + betrag > 0)
-                setRechnungStatus(nr, RechnungStatus.TEIL_BEGLICHEN);
+                setRechnungStatus(rnr, RechnungStatus.TEIL_BEGLICHEN);
             else
-                setRechnungStatus(nr, RechnungStatus.OFFEN);
+                setRechnungStatus(rnr, RechnungStatus.OFFEN);
 
             return rechnungRepo.zahlungseingangBuchen(betrag, nr);
         }

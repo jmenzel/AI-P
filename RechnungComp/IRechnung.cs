@@ -12,7 +12,7 @@ namespace RechnungComp
     {
         RechnungsNrTyp erstelleRechnung(AuftragTyp auftrag);
         RechnungsTyp getRechnung(RechnungsNrTyp nr);
-        Boolean zahlungseingangBuchen(Double betrag, RechnungsNrTyp nr);
+        Boolean zahlungseingangBuchen(Double betrag, String nr);
         IList<ZahlungseingangTyp> getZahlungseingaenge(RechnungsNrTyp rnr);
         void setRechnungStatus(RechnungsNrTyp nr, RechnungStatus status);
     }

@@ -20,6 +20,13 @@ namespace HES.Core
 {
     public class Core
     {
+        #region RabbitMQ Parameter
+
+        private readonly String hostname = "localhost";
+        private readonly String queuename = "HAPSAR";
+       
+        #endregion
+
         private ISessionFactory db;
 
         private ILager lager;
@@ -27,7 +34,6 @@ namespace HES.Core
         private IAuftragserfassung auftragserfassung;
         private IKunde kunden;
         private IRechnung rechnung;
-
         private ClientConnector connector;
 
 
@@ -47,6 +53,8 @@ namespace HES.Core
             //
 
             rechnung = RechnungKomp.getRechnungKomp(db);
+            //HAPSAR Connector
+            HAPSARConnector hapsar = new HAPSARConnector(rechnung, hostname, queuename);
             #endregion
 
             #region Fassade erstellen

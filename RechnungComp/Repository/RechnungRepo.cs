@@ -42,19 +42,6 @@ namespace RechnungComp.Repository
         }
 
 
-        public bool zahlungseingangBuchen(double betrag, RechnungsNrTyp nr)
-        {
-            using (var session = RechnungKomp.getDB().OpenSession())
-            using (var transaction = session.BeginTransaction())
-            {
-                session.SaveOrUpdate(new ZahlungseingangTyp(nr,betrag));
-                transaction.Commit();
-
-                return true;
-            }
-        }
-
-
         public IList<ZahlungseingangTyp> getZahlungseingaenge(RechnungsNrTyp rnr)
         {
             using (var session = RechnungKomp.getDB().OpenSession())
@@ -75,6 +62,28 @@ namespace RechnungComp.Repository
                 session.Update(rechnung);
                 transaction.Commit();
             } 
+        }
+
+
+        public void setRechnungStatus(string nr, RechnungStatus status)
+        {
+            throw new NotImplementedException();
+        }
+
+
+        public bool zahlungseingangBuchen(double betrag, String nr)
+        {
+            RechnungsNrTyp rnr = new RechnungsNrTyp(nr);
+
+            using (var session = RechnungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                session.SaveOrUpdate(new ZahlungseingangTyp(rnr, betrag));
+                transaction.Commit();
+
+                return true;
+            }
+            return false;
         }
     }
 }
