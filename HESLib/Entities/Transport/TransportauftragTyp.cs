@@ -10,15 +10,15 @@ namespace HES.TransportComp.Repository.Entity
     [Serializable()]
     public class TransportauftragTyp
     {
-        public virtual int ID { get; protected set; }
-        public virtual LiefernummerTyp lieferNummer { get; protected set; }
-        public virtual TransportauftragNrTyp nr { get; protected set; }
-        public virtual DateTime ausgangsDatum { get; protected set; }
-        public virtual bool lieferungErfolg { get; protected set; }
-        public virtual DateTime lieferDatum { get; protected set; }
+        public virtual int ID { get; set; }
+        public virtual LiefernummerTyp lieferNummer { get; set; }
+        public virtual TransportauftragNrTyp nr { get; set; }
+        public virtual DateTime ausgangsDatum { get; set; }
+        public virtual bool lieferungErfolg { get; set; }
+        public virtual DateTime lieferDatum { get; set; }
         //Hier evlt. KundeTyp oder eigenen LieferanteTyp?
-        public virtual String transportDienstleister { get; protected set; }
-        public virtual AuftragNrTyp auftrag { get; protected set; }
+        public virtual String transportDienstleister { get; set; }
+        public virtual AuftragNrTyp auftrag { get; set; }
 
 
         public TransportauftragTyp(LiefernummerTyp liefernummer, TransportauftragNrTyp nr, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag)

@@ -7,15 +7,16 @@ using HES.TransportComp.Repository.Entity;
 using HES.TransportComp.Repository;
 using HES.AuftragserfassungComp.Repository.Entity;
 using HESCommunicationLib;
+using HESCommunicationLib.Transport;
 
 namespace HES.TransportComp.Logic
 {
     class Transportauftrag : ITransport
     {
         private TransportRepo repo;
-        private TDLConnector tdl;
+        private ITDLConnector tdl;
 
-        public Transportauftrag(TDLConnector tdl)
+        public Transportauftrag(ITDLConnector tdl)
         {
             this.tdl = tdl;
             repo = new TransportRepo();

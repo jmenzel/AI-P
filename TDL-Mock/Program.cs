@@ -6,6 +6,8 @@ using System.ServiceModel.Description;
 using System.ServiceModel.Web;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
+using System.Web.Http.SelfHost;
 
 namespace TDL_Mock
 {
@@ -13,27 +15,23 @@ namespace TDL_Mock
     {
         static void Main(string[] args)
         {
-            WebServiceHost host = new WebServiceHost(typeof(TDLService), new Uri("http://localhost:8000/"));
-            host.Faulted += host_Faulted;
-            host.UnknownMessageReceived += host_UnknownMessageReceived;
+            var baseAdress = "http://localhost:8000/";
+            var config = new HttpSelfHostConfiguration(baseAdress);
 
-            ServiceEndpoint ep = host.AddServiceEndpoint(typeof(ITDL), new WebHttpBinding(), "itdl");
+            config.Routes.MapHttpRoute(
+                name: "DefaultApi",
+                routeTemplate: "api/{controller}/{id}",
+                defaults: new { id = RouteParameter.Optional });
 
-            host.Open();
-            Console.WriteLine("ITDL Service is running");
-            Console.WriteLine("Press enter to quit...");
-            Console.ReadLine();
-            host.Close();
-        }
+            Console.WriteLine("Instantiating the Server...");
 
-        static void host_UnknownMessageReceived(object sender, UnknownMessageReceivedEventArgs e)
-        {
-            Console.WriteLine("Unknown Message " + sender.ToString() + " : " + e.Message.ToString());
-        }
+            using (var server = new HttpSelfHostServer(config))
+            {
+                server.OpenAsync().Wait();
+                Console.WriteLine("Server is Running Now ... @ " + baseAdress);
+                Console.ReadLine();
+            }
 
-        private static void host_Faulted(object sender, EventArgs e)
-        {
-            Console.WriteLine("Error Faulted");
         }
     }
 }

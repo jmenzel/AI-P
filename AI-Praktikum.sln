@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HESCommunicationLib", "HESC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDL-Mock", "TDL-Mock\TDL-Mock.csproj", "{AAE4A59C-20F5-4768-A5B7-61C58CF0D701}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rest-Test", "Rest-Test\Rest-Test.csproj", "{125F510A-9C61-410E-857F-38B3AE979986}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,10 @@ Global
 		{AAE4A59C-20F5-4768-A5B7-61C58CF0D701}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AAE4A59C-20F5-4768-A5B7-61C58CF0D701}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AAE4A59C-20F5-4768-A5B7-61C58CF0D701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{125F510A-9C61-410E-857F-38B3AE979986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125F510A-9C61-410E-857F-38B3AE979986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125F510A-9C61-410E-857F-38B3AE979986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125F510A-9C61-410E-857F-38B3AE979986}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

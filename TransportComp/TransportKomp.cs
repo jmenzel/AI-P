@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using NHibernate;
 using HESCommunicationLib;
+using HESCommunicationLib.Transport;
 
 namespace HES.TransportComp
 {
@@ -18,7 +19,7 @@ namespace HES.TransportComp
         }
 
         //public static ITransport getTransportKomp(ISessionFactory db)
-        public static ITransport getTransportKomp(ISessionFactory db, TDLConnector tdl)
+        public static ITransport getTransportKomp(ISessionFactory db, ITDLConnector tdl)
         {
            TransportKomp.db = db;
            return new Logic.Transportauftrag(tdl);

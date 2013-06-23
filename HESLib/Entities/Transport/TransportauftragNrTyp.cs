@@ -10,7 +10,7 @@ namespace HES.TransportComp.Repository.Entity
     public class TransportauftragNrTyp
     {
         private readonly String contraction = "TR_";
-        public virtual String nr { get; protected set; }
+        public virtual String nr { get; set; }
 
         public TransportauftragNrTyp(String nr)
         {

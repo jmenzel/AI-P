@@ -9,7 +9,7 @@ namespace HES.TransportComp.Repository.Entity
     [Serializable()]
     public class LiefernummerTyp
     {
-        public virtual String nr { get; protected set; }
+        public virtual String nr { get; set; }
 
         //TODO: Nummer validieren!
         public LiefernummerTyp(string nr)
