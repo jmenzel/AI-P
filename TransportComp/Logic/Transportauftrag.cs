@@ -7,15 +7,16 @@ using HES.TransportComp.Repository.Entity;
 using HES.TransportComp.Repository;
 using HES.AuftragserfassungComp.Repository.Entity;
 using HESCommunicationLib;
+using HESCommunicationLib.Transport;
 
 namespace HES.TransportComp.Logic
 {
     class Transportauftrag : ITransport
     {
         private TransportRepo repo;
-        private TDLConnector tdl;
+        private ITDLConnector tdl;
 
-        public Transportauftrag(TDLConnector tdl)
+        public Transportauftrag(ITDLConnector tdl)
         {
             this.tdl = tdl;
             repo = new TransportRepo();
@@ -23,7 +24,12 @@ namespace HES.TransportComp.Logic
 
         public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag)
         {
+            Console.WriteLine("In erstelleTransportauftrag!");
+
             var tdNr = repo.erstelleTransportauftrag(liefernummer, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister,auftrag);
+
+            if (tdNr == null) Console.WriteLine("Erstelle Transportauftrag fehgeschlagen");
+            
             tdl.putTransportauftrag(repo.getTransportAuftrag(tdNr));
             return tdNr;
         }

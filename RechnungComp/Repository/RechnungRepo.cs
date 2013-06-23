@@ -36,7 +36,9 @@ namespace RechnungComp.Repository
             using (var session = RechnungKomp.getDB().OpenSession())
             using (var transaction = session.BeginTransaction())
             {
-                return session.CreateCriteria(typeof(RechnungsTyp)).Add(Restrictions.Like("nr", nr)).List<RechnungsTyp>().ElementAt(0);
+                var ret = session.CreateCriteria(typeof(RechnungsTyp)).Add(Restrictions.Eq("nr", nr)).UniqueResult<RechnungsTyp>();
+                Console.WriteLine("Got a -> " + ret.ToString());
+                return ret;
             } 
 
         }

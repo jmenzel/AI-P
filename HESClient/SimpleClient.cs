@@ -104,7 +104,10 @@ namespace HESClient
             Console.WriteLine("Transportauftrag erstellt: " + IHes.getTransportAuftrag(transportAuftrag));
 
             var rechnung_1 = IHes.erstelleRechnung(IHes.holeAuftrag(auftrag_neu));
-            Console.WriteLine("\nRechnung erstellt:\n" + IHes.getRechnung(rechnung_1));
+
+            var r = IHes.getRechnung(rechnung_1);
+
+            Console.WriteLine("\nRechnung erstellt:\n" + r);
 
             #endregion
  

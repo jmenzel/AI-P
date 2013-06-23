@@ -9,6 +9,5 @@ namespace HES.TransportComp.Logic
 {
     public class Lieferauftrag
     {
-        
     }
 }

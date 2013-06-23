@@ -14,7 +14,7 @@ namespace HES.Mappings
         {
             Id(x => x.id);
             Map(x => x.betrag);
-            References<RechnungsTyp>(x => x.zuRechnungsNr);
+            References(x => x.zuRechnungsNr).Not.LazyLoad();
         }
     }
 }
