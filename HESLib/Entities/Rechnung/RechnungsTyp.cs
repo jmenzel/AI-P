@@ -15,7 +15,7 @@ namespace RechnungComp.Repository.Entity
         public virtual DateTime RechnungsDatum { get; protected set; }
         public virtual bool IstBezahlt { get; protected set; }
         public virtual AuftragTyp fuerAuftrag { get; protected set; }
-        public virtual IList<ZahlungseingangTyp> zahlungseingaenge { get; protected set; }
+        public virtual List<ZahlungseingangTyp> zahlungseingaenge { get; protected set; }
         public virtual RechnungStatus status { get; protected set; }
         public virtual double preis { get; protected set; }
 

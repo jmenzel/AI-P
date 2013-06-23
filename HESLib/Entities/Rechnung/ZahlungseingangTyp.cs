@@ -11,7 +11,7 @@ namespace RechnungComp.Repository.Entity
     {
         public virtual int id { get; protected set; }
         public virtual double betrag { get; protected set; }
-        public virtual RechnungsNrTyp zuRechnungsNr { get; protected set;}
+        public virtual RechnungsNrTyp zuRechnungsNr { get; protected set; }
 
         //Hibernate
         protected ZahlungseingangTyp() {}

@@ -24,7 +24,12 @@ namespace HES.TransportComp.Logic
 
         public TransportauftragNrTyp erstelleTransportauftrag(LiefernummerTyp liefernummer, DateTime ausgangsDatum, bool lieferungErfolgt, DateTime lieferDatum, String transportDienstleister,AuftragNrTyp auftrag)
         {
+            Console.WriteLine("In erstelleTransportauftrag!");
+
             var tdNr = repo.erstelleTransportauftrag(liefernummer, ausgangsDatum, lieferungErfolgt, lieferDatum, transportDienstleister,auftrag);
+
+            if (tdNr == null) Console.WriteLine("Erstelle Transportauftrag fehgeschlagen");
+            
             tdl.putTransportauftrag(repo.getTransportAuftrag(tdNr));
             return tdNr;
         }

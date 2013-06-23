@@ -25,7 +25,7 @@ namespace HES.Mappings
             References(x => x.nr).Cascade.All().Not.LazyLoad();
             Map(x => x.gueltigAb);
             Map(x => x.gueltigBis);
-            HasOne(x => x.kunde).Constrained().ForeignKey();
+            HasOne(x => x.kunde).Constrained().ForeignKey().Not.LazyLoad();
         }
     }
 }

@@ -31,14 +31,27 @@ namespace HESCommunicationLib.Transport
         {
             //Create Auftrag Object
 
+            if (auftrag == null) Console.WriteLine("AuftragKomp is null");
+            if (kunde == null) Console.WriteLine("KundeKomp is null");
+            if (lager == null) Console.WriteLine("LagerKomp is null");
+            
             var auft = auftrag.holeAuftrag(ta.auftrag);
+
+            if (auft == null) Console.WriteLine("Hole Auftrag schlug fehl -> " + ta.auftrag.ToString());
+
             var angebot = auftrag.holeAngebot(auft.gehoertZuAngebot);
+
+            if (angebot == null) Console.WriteLine("Hole Angebot schlug fehl -> " + auft.gehoertZuAngebot.ToString());
+
             var customer = angebot.kunde;
+
+            if (customer == null) Console.WriteLine("Customer is null -> " + auft.ToString());
+
 
             Auftrag a1 = new Auftrag()
             {
                 AuftragNr = ta.nr.nr,
-                ExtLieferNr = ta.lieferNummer.nr,
+                ExtLieferNr = (ta.lieferNummer != null) ? ta.lieferNummer.nr : "",
                 Ausgeliefert = false,
                 AusgeliefertDate = new DateTime(1970, 01, 01),
                 DestName = customer.name,

@@ -28,7 +28,8 @@ namespace HES.Core.Persistance
 
         public static void BuildSchema(Configuration config)
         {
-            new SchemaUpdate(config).Execute(false, true);
+            //new SchemaExport(config).SetDelimiter(";").Execute(true, true, false);
+            new SchemaUpdate(config).Execute(true, true);
             //if (File.Exists(DB_NAME)) File.Delete(DB_NAME);
             //new SchemaExport(config).Create(false, true);
         }

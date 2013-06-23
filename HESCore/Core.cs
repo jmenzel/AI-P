@@ -67,6 +67,7 @@ namespace HES.Core
 
         public ITransport getTransportComp()
         {
+            if (transport == null) Console.WriteLine("Transport null?!?!");
             return transport;
         }
 
