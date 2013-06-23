@@ -29,6 +29,7 @@ namespace HES.Fassade
         #endregion
 
         #region Auftragserfassung
+        
         AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kundeNr, IDictionary<ProduktNummerTyp, int> produktListe);
         AuftragNrTyp erstelleAuftrag(AngebotNrTyp nr, bool istAbgeschlossen, DateTime erstelltAm);
         AuftragTyp holeAuftrag(AuftragNrTyp auftragNr);

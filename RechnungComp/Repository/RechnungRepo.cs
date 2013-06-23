@@ -20,8 +20,10 @@ namespace RechnungComp.Repository
             {
                 var maxID = session.CreateCriteria(typeof(RechnungsTyp)).SetProjection(Projections.Max("ID")).UniqueResult();
                 var nr = new RechnungsNrTyp(maxID != null ? Convert.ToString(maxID) : "0");
-            
-                session.SaveOrUpdate(new RechnungsTyp(nr,auftrag, DateTime.Now, false));
+                RechnungsTyp rechnung = new RechnungsTyp(nr, auftrag, DateTime.Now, false);
+                rechnung.setStatus(RechnungStatus.OFFEN);
+
+                session.SaveOrUpdate(rechnung);
                 transaction.Commit();
 
                 return nr;
@@ -37,6 +39,42 @@ namespace RechnungComp.Repository
                 return session.CreateCriteria(typeof(RechnungsTyp)).Add(Restrictions.Like("nr", nr)).List<RechnungsTyp>().ElementAt(0);
             } 
 
+        }
+
+
+        public bool zahlungseingangBuchen(double betrag, RechnungsNrTyp nr)
+        {
+            using (var session = RechnungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                session.SaveOrUpdate(new ZahlungseingangTyp(nr,betrag));
+                transaction.Commit();
+
+                return true;
+            }
+        }
+
+
+        public IList<ZahlungseingangTyp> getZahlungseingaenge(RechnungsNrTyp rnr)
+        {
+            using (var session = RechnungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                return session.CreateCriteria(typeof(ZahlungseingangTyp)).Add(Restrictions.Like("zuRechnungsNr", rnr)).List<ZahlungseingangTyp>();
+            } 
+        }
+
+        public void setRechnungStatus(RechnungsNrTyp nr, RechnungStatus status)
+        {
+            RechnungsTyp rechnung = getRechnung(nr);
+
+            using (var session = RechnungKomp.getDB().OpenSession())
+            using (var transaction = session.BeginTransaction())
+            {
+                rechnung.setStatus(status);
+                session.Update(rechnung);
+                transaction.Commit();
+            } 
         }
     }
 }

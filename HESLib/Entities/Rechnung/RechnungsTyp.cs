@@ -15,6 +15,9 @@ namespace RechnungComp.Repository.Entity
         public virtual DateTime RechnungsDatum { get; protected set; }
         public virtual bool IstBezahlt { get; protected set; }
         public virtual AuftragTyp fuerAuftrag { get; protected set; }
+        public virtual IList<ZahlungseingangTyp> zahlungseingaenge { get; protected set; }
+        public virtual RechnungStatus status { get; protected set; }
+        public virtual double preis { get; protected set; }
 
         public RechnungsTyp(RechnungsNrTyp rNr,AuftragTyp fuerAuftrag, DateTime datum, bool istBezahlt)
         {
@@ -22,6 +25,14 @@ namespace RechnungComp.Repository.Entity
             this.RechnungsDatum = datum;
             this.IstBezahlt = istBezahlt;
             this.fuerAuftrag = fuerAuftrag;
+            this.preis = fuerAuftrag.preis;
+            this.zahlungseingaenge = new List<ZahlungseingangTyp>();
+        }
+
+        //Könnte man in den Konstruktor setzten..war nur zu faul zum refactoren
+        public virtual void setStatus(RechnungStatus status)
+        {
+            this.status = status;
         }
 
         protected RechnungsTyp() { }
