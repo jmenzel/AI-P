@@ -15,6 +15,7 @@ using HES.AuftragserfassungComp;
 using RechnungComp;
 using HES.Fassade;
 using HESCommunicationLib.Transport;
+using HESCommunicationLib;
 
 namespace HES.Core
 {

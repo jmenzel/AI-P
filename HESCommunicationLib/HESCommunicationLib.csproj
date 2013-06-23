@@ -30,13 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-<<<<<<< HEAD
+
     <Reference Include="RabbitMQ.Client">
       <HintPath>..\packages\RabbitMQ.Client.3.1.1\lib\net30\RabbitMQ.Client.dll</HintPath>
-=======
+    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
->>>>>>> cdb147e59752d59040f3ce4cd8d313daf22920e0
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -67,11 +66,11 @@
       <Project>{0f0c51ec-8471-450f-bfa6-13e723cb559f}</Project>
       <Name>HESLib</Name>
     </ProjectReference>
-<<<<<<< HEAD
+
     <ProjectReference Include="..\RechnungComp\RechnungComp.csproj">
       <Project>{69390045-dde8-49d8-aaea-c06243d5eec0}</Project>
       <Name>RechnungComp</Name>
-=======
+    </ProjectReference>
     <ProjectReference Include="..\Kunde\KundeComp.csproj">
       <Project>{d308a9b1-afc1-444d-9a47-66cbbd474e4b}</Project>
       <Name>KundeComp</Name>
@@ -79,7 +78,6 @@
     <ProjectReference Include="..\LagerComp\LagerComp.csproj">
       <Project>{7b019172-ddf9-45e6-9a72-1181772da7ef}</Project>
       <Name>LagerComp</Name>
->>>>>>> cdb147e59752d59040f3ce4cd8d313daf22920e0
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
