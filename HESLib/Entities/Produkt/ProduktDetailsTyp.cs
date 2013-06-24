@@ -17,20 +17,11 @@ namespace HES.Lager.Produkt.Repository.Entity
         protected ProduktDetailsTyp()
         { }
 
-        public ProduktDetailsTyp(string name)
-        {
-            this.name = name;
-        }
-
-        public ProduktDetailsTyp(ProduktNummerTyp nr, string name)
+        public ProduktDetailsTyp(ProduktNummerTyp nr, string name, double preis)
         {
             this.prodNr = nr;
             this.name = name;
-        }
-
-        public virtual ProduktDetailsTyp asTyp()
-        {
-            return new ProduktDetailsTyp(this.prodNr, this.name);
+            this.preis = preis;
         }
     }
 }

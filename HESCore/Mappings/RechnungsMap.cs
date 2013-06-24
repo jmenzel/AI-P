@@ -20,7 +20,7 @@ namespace HES.Mappings
             Map(x => x.status);
             Map(x => x.preis);
             HasOne(x => x.fuerAuftrag).ForeignKey().Not.LazyLoad();
-            HasMany(x => x.zahlungseingaenge).Cascade.All().Not.LazyLoad();
+            HasMany(x => x.zahlungseingaenge).Cascade.All().Inverse().Not.LazyLoad();
         }
     }
 

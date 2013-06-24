@@ -22,7 +22,7 @@ namespace HES.AuftragserfassungComp.Logic
         //Der Preis wird hier berechnet und nach unten gereicht, damit die Entity davon nichts mitbekommt
         public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde,IDictionary<ProduktNummerTyp, int> produktListe)
         {
-            return repo.erstelleAngebot(gueltigAb,gueltigBis,getGesamtPreis(produktListe,preis),kunde);
+            return repo.erstelleAngebot(gueltigAb, gueltigBis, getGesamtPreis(produktListe, preis), kunde, produktListe);
         }
 
         public AngebotTyp holeAngebot(AngebotNrTyp nr)

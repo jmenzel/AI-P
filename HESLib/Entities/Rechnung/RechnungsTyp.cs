@@ -41,7 +41,7 @@ namespace RechnungComp.Repository.Entity
         {
             return "Rechnungsnummer: " + nr.ToString()
                 + "\nRechnungsDatum: " + RechnungsDatum
-                + "\nBezahlt: " + IstBezahlt;
+                + "\nStatus: " + status;
         }
     }
 }

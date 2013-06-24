@@ -11,23 +11,16 @@ namespace HES.Lager.Produkt.Repository
 {
     class ProduktRepo : ICompProdukt
     {
-        string te = "A_";
-
         public ProduktNummerTyp erstelleProdukt(ProduktDetailsTyp prod)
         {
-            ProduktDetails pd = new ProduktDetails(new ProduktNummerTyp(te += "A"), prod.name);
-
-            //TODO Prüfen ob Produktnummer vergeben
-            //Wenn nicht, eine erstellen (vorm speichern)
-
             using (var session = LagerComp.getDB().OpenSession())
             using (var transaction = session.BeginTransaction())
             {
-                session.SaveOrUpdate(pd.asTyp());
+                session.SaveOrUpdate(prod);
                 transaction.Commit();
             }
 
-            return pd.prodNr;
+            return prod.prodNr;
         }
 
         public ProduktDetailsTyp[] getProdukte()

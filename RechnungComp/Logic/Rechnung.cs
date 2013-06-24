@@ -39,7 +39,7 @@ namespace RechnungComp.Logic
             var alleZahlungen = getZahlungseingaenge(rnr);
             Double alleBetraege = alleZahlungen.Sum(x => x.betrag);
 
-            if(preis == alleBetraege + betrag)
+            if(preis <= alleBetraege + betrag)
                 setRechnungStatus(rnr, RechnungStatus.BEGLICHEN);
             else if(alleBetraege + betrag > 0)
                 setRechnungStatus(rnr, RechnungStatus.TEIL_BEGLICHEN);

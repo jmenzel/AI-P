@@ -16,7 +16,7 @@ namespace RechnungComp.Repository.Entity
         //Hibernate
         protected ZahlungseingangTyp() {}
 
-        public ZahlungseingangTyp(RechnungsNrTyp nr, double Betrag)
+        public ZahlungseingangTyp(RechnungsNrTyp nr, double betrag)
         {
             this.betrag = betrag;
             this.zuRechnungsNr = nr;

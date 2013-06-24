@@ -62,9 +62,9 @@ namespace HESClient
         {
             #region Komponenten initialisieren
 
-            var prodLaptop = IHes.erstelleProdukt(new ProduktDetailsTyp("Laptop X750"));
-            var prodFestplatte = IHes.erstelleProdukt(new ProduktDetailsTyp("Festplatte Toshiba J200"));
-            var prodKabel = IHes.erstelleProdukt(new ProduktDetailsTyp("Kabel HDMI"));
+            var prodLaptop = IHes.erstelleProdukt(new ProduktDetailsTyp(new ProduktNummerTyp("425097364"), "Laptop X750", 1200D));
+            var prodFestplatte = IHes.erstelleProdukt(new ProduktDetailsTyp(new ProduktNummerTyp("09876528635"), "Festplatte Toshiba J200", 250.49));
+            var prodKabel = IHes.erstelleProdukt(new ProduktDetailsTyp(new ProduktNummerTyp("2389765935"), "Kabel HDMI", 12.99));
             IDictionary<ProduktNummerTyp, int> produkteFuerAngbeot;
             
             IHes.erstelleKunden("Buskulic", "Dino", DateTime.Parse("26.05.1989"), KundenLevel.HighOrder, "Test 1", "20539", "Hamburg", "Deutschland");
@@ -108,6 +108,17 @@ namespace HESClient
             var r = IHes.getRechnung(rechnung_1);
 
             Console.WriteLine("\nRechnung erstellt:\n" + r);
+
+            string _input = "";
+            do
+            {
+                _input = Console.ReadLine();
+
+                Console.WriteLine(IHes.getRechnung(rechnung_1));
+                Console.WriteLine();
+
+            }
+            while (_input.ToLower() != "exit");
 
             #endregion
  

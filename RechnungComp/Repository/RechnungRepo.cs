@@ -37,10 +37,8 @@ namespace RechnungComp.Repository
             using (var transaction = session.BeginTransaction())
             {
                 var ret = session.CreateCriteria(typeof(RechnungsTyp)).Add(Restrictions.Eq("nr", nr)).UniqueResult<RechnungsTyp>();
-                Console.WriteLine("Got a -> " + ret.ToString());
                 return ret;
             } 
-
         }
 
 
@@ -66,13 +64,6 @@ namespace RechnungComp.Repository
             } 
         }
 
-
-        public void setRechnungStatus(string nr, RechnungStatus status)
-        {
-            throw new NotImplementedException();
-        }
-
-
         public bool zahlungseingangBuchen(double betrag, String nr)
         {
             RechnungsNrTyp rnr = new RechnungsNrTyp(nr);
@@ -80,7 +71,10 @@ namespace RechnungComp.Repository
             using (var session = RechnungKomp.getDB().OpenSession())
             using (var transaction = session.BeginTransaction())
             {
-                session.SaveOrUpdate(new ZahlungseingangTyp(rnr, betrag));
+                
+                var _tmp = new ZahlungseingangTyp(rnr, betrag);
+
+                session.SaveOrUpdate(_tmp);
                 transaction.Commit();
 
                 return true;

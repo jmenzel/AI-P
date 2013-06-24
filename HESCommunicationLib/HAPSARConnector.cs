@@ -63,7 +63,11 @@ namespace HESCommunicationLib
                         (BasicDeliverEventArgs)consumer.Queue.Dequeue();
 
                     byte[] body = ea.Body;
-                    string[] message = System.Text.Encoding.UTF8.GetString(body).Split(';');
+                    string _tmp = System.Text.Encoding.UTF8.GetString(body);
+
+                    if(_tmp == null || _tmp.Length == 0 || !_tmp.Contains(";")) continue;
+
+                    string[] message = _tmp.Split(';');
                     System.Console.WriteLine(" [x] Received {0}", message);
                     zahlungsEingangBuchen(message[0], Double.Parse(message[1]));
                 }

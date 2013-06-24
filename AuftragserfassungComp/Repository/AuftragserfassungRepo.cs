@@ -7,6 +7,7 @@ using HES.AuftragserfassungComp.Repository.Entity;
 using HES.Kunde.Repository.Entity;
 using NHibernate.Criterion;
 using HES.Lager.Repository.Entity;
+using HES.Lager.Produkt.Repository.Entity;
 
 namespace HES.AuftragserfassungComp.Repository
 {
@@ -20,7 +21,7 @@ namespace HES.AuftragserfassungComp.Repository
         /// <param name="preis"></param>
         /// <param name="kundeNr">ForeignKey Beziehung auf einen Kunden</param>
         /// <returns>NULL if SaveOrUpdate Fails else AngebotNrTyp for der persistent AngebotTyp</returns>
-        public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde)
+        public AngebotNrTyp erstelleAngebot(DateTime gueltigAb, DateTime gueltigBis, double preis, KundeTyp kunde, IDictionary<ProduktNummerTyp, int> prod)
         {
             AngebotNrTyp angebotNr = null;
 
@@ -35,7 +36,7 @@ namespace HES.AuftragserfassungComp.Repository
                     var maxID = session.CreateCriteria(typeof(AngebotTyp)).SetProjection(Projections.Max("ID")).UniqueResult();
                     angebotNr = new AngebotNrTyp(maxID != null ? Convert.ToString(maxID) : "0");
 
-                    AngebotTyp angebot = new AngebotTyp(angebotNr, gueltigAb, gueltigBis, preis, kunde);
+                    AngebotTyp angebot = new AngebotTyp(angebotNr, gueltigAb, gueltigBis, preis, kunde, prod);
                     session.SaveOrUpdate(angebot);
                     transaction.Commit();
                 }

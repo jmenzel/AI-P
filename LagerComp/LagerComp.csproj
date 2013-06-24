@@ -52,7 +52,6 @@
     <Compile Include="LagerComp.cs" />
     <Compile Include="Logic\Lager.cs" />
     <Compile Include="Produkt\IProdukt.cs" />
-    <Compile Include="Produkt\Repository\Entity\ProduktDetails.cs" />
     <Compile Include="Produkt\Repository\ICompProdukt.cs" />
     <Compile Include="Produkt\Repository\ProduktRepo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
