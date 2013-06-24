@@ -1,6 +1,4 @@
 ﻿using HES.AuftragserfassungComp;
-using HES.Kunde;
-using HES.Lager;
 using HES.TransportComp.Repository.Entity;
 using System;
 using System.Collections.Generic;
@@ -16,9 +14,7 @@ namespace HESCommunicationLib.Transport
     {
         private HttpClient client;
 
-        private IKunde kunde;
         private IAuftragserfassung auftrag;
-        private ILager lager;
 
         public TDLConnector()
         {
@@ -32,8 +28,6 @@ namespace HESCommunicationLib.Transport
             //Create Auftrag Object
 
             if (auftrag == null) Console.WriteLine("AuftragKomp is null");
-            if (kunde == null) Console.WriteLine("KundeKomp is null");
-            if (lager == null) Console.WriteLine("LagerKomp is null");
             
             var auft = auftrag.holeAuftrag(ta.auftrag);
 
@@ -69,19 +63,10 @@ namespace HESCommunicationLib.Transport
             var resp_a1 = client.PostAsJsonAsync<Auftrag>("api/Auftrag", a1).Result;
         }
 
-        public void setKundenComp(IKunde kunde)
-        {
-            this.kunde = kunde;
-        }
-
         public void setAuftragserfassungComp(IAuftragserfassung auftrag)
         {
             this.auftrag = auftrag;
         }
 
-        public void setLagerComp(HES.Lager.ILager lager)
-        {
-            this.lager = lager;
-        }
     }
 }

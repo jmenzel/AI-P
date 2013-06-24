@@ -50,13 +50,8 @@ namespace HES.Core
 
             ITDLConnector tdl = new TDLConnector();
             tdl.setAuftragserfassungComp(auftragserfassung);
-            tdl.setKundenComp(kunden);
-            tdl.setLagerComp(lager);
-
 
             transport = TransportKomp.getTransportKomp(db, tdl);
-
-            //
 
             rechnung = RechnungKomp.getRechnungKomp(db);
             //HAPSAR Connector
