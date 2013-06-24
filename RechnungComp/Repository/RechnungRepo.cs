@@ -85,7 +85,7 @@ namespace RechnungComp.Repository
 
                 return true;
             }
-            return false;
+            //return false;
         }
     }
 }
